@@ -20,4 +20,9 @@ public class CrearMascota{
 		return mascota;
 	}
 	
+	public void verMascotas(){
+		baseDatos.mascotasDisponibles();
+	}
+	
+	
 }
