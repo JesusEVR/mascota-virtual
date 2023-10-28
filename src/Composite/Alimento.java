@@ -1,12 +1,13 @@
 package Composite;
 
 public class Alimento implements Producto{
-	String codigo;
-	String nombre;
-	String descripcion;
-	double precio;
-	double puntosHambre;
-	double puntosFelicidad;
+
+	private String codigo;
+	private String nombre;
+	private String descripcion;
+	private double precio;
+	private double puntosHambre;
+	private double puntosFelicidad;
 	
 	public Alimento(String codigo, String nombre, String descripcion, double precio, double puntosHambre, double puntosFelicidad){
 		this.codigo = codigo;

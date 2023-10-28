@@ -13,14 +13,14 @@ import java.util.Iterator;
  */
 
 public class IteradorLista implements Iterator{
-	public LinkedList<Object> lista;
 
-	Iterator it;
+	private LinkedList<Object> lista;
+	private Iterator it;
 
-	/**
+    /**
      * Constructor de la clase IteradorLista.
      * 
-     * @param lista Lista de artículos del catálogo
+     * @param lista Lista de productos 
      */
 	public IteradorLista(LinkedList<Object> lista){
 		this.lista = lista;

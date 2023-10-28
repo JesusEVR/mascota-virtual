@@ -50,7 +50,7 @@ public class Inventario implements Producto{
 		listaDeAlimentos.add(a);
 	}
 	
-	public void vaciarRefrigerador(){
+	public void vaciarInventario(){
 		listaDeAlimentos.clear();
 	}
 
