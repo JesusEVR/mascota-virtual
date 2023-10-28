@@ -38,11 +38,11 @@ public class Inventario implements Producto{
 		return "0"; //por defecto
 	}
 	
-	public int modificaHambre(){ 
+	public double modificaHambre(){ 
 		return 0; //por defecto
 	}
 	
-	public int modificaFelicidad(){
+	public double modificaFelicidad(){
 		return 0; //por defecto
 	}
 	

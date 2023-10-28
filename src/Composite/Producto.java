@@ -26,7 +26,7 @@ public interface Producto{
 	
 	public String codigo();
 	
-	public int modificaHambre();
+	public double modificaHambre();
 	
-	public int modificaFelicidad();
+	public double modificaFelicidad();
 }

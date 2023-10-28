@@ -5,10 +5,10 @@ public class Alimento implements Producto{
 	String nombre;
 	String descripcion;
 	double precio;
-	int puntosHambre;
-	int puntosFelicidad;
+	double puntosHambre;
+	double puntosFelicidad;
 	
-	public Alimento(String codigo, String nombre, String descripcion, double precio, int puntosHambre, int puntosFelicidad){
+	public Alimento(String codigo, String nombre, String descripcion, double precio, double puntosHambre, double puntosFelicidad){
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.descripcion  =descripcion;
@@ -33,11 +33,11 @@ public class Alimento implements Producto{
 		return "Codigo: "+codigo+ " Alimento: " + nombre +"\n"+"Descripcion: " + descripcion;
 	}
 	
-	public int modificaHambre(){
+	public double modificaHambre(){
 		return puntosHambre;
 	}
 	
-	public int modificaFelicidad(){
+	public double modificaFelicidad(){
 		return puntosFelicidad;
 	}
 	
