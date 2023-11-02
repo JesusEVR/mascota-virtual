@@ -26,6 +26,7 @@ public class ModoJugar implements EstadoMascota{
 	
 	private void jugarMinijuegos(){//Aqui va el sistema de minijuegos
 		System.out.println("Jugando ando :)))");
+		System.out.println("(Aqui se imprime el menu de minijuegos y termina el modo jugar)");
 	}
 
 

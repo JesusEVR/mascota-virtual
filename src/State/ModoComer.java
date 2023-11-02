@@ -9,7 +9,8 @@ public class ModoComer implements EstadoMascota{
 	}
 	
 	public void alimentar(){ //aqui se alimenta y se va de compras de ser necesario
-		System.out.println("Ya comi");
+		System.out.println("(Aqui se verifica si el refrigerador esta vacio, de ser asi se va al minisuper(opcional)");
+		System.out.println("o se le alimenta con lo que tiene y termina el modo comer)");
 		
 		hogar.asignarNuevoEstado(hogar.modoSuspender());
 	}

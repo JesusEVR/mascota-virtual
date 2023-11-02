@@ -1,10 +1,19 @@
+package Facade;
+
+import State.Hogar;
+//import Prototype.MascotaVirtual;
+
+import java.util.Scanner;
 public class CentroAdopcion{
 	
-	private MascotaVirtual mascota;
+	//private MascotaVirtual mascota;
 	private boolean continuar;
+	private Hogar hogar;
+	private Scanner sc = new Scanner(System.in);
 	
 	public CentroAdopcion(){
 		continuar=true;
+		hogar = new Hogar();
 	}
 	
 	public void darBienvenida(){
@@ -21,17 +30,72 @@ public class CentroAdopcion{
 	
 	public void convivir(){
 		//if(continuar){
+		boolean seguir=false;
+		int opcion=0;
 		
-		System.out.println("Aqui se usa state");
+		do{
+		System.out.println("	------------ M E N U -----------");
+		System.out.println("		1. Jugar con mi mascota");
+		System.out.println("		2. Alimentar a mi mascota");
+		System.out.println("		3. Darle las buenas noches"); 
+		System.out.println("		4. Darle los buenos dias"); //despertar 
+		System.out.println("		5. Ver mi mascota"); 
+		System.out.println("		0. Salir de la app");
+		System.out.println("	--------------------------------");
 
-		System.out.println("1. Jugar");
-		System.out.println("2. Alimentar");
-		System.out.println("3. Dar las buenas noches"); 
-		System.out.println("4. Dar los buenos dias"); //despertar 
-		System.out.println("5. Ver mi mascota"); 
-		System.out.println("0. Salir");
-		
-		//}
+		System.out.print("Selecciona la opción que deseas ejecutar: ");
+	
+			while(true){
+				try {
+					String opcionUsuario = sc.nextLine();
+					opcion =  Integer.parseInt(opcionUsuario);
+					if(opcion >-1 && opcion < 6){ 
+						break;
+					}else{ System.out.print("		Por favor, elige una opción válida: ");}
+				}catch (NumberFormatException ex){
+					System.out.print("		Por favor, elige una opción válida: ");
+				}
+			}
+			
+			
+			switch(opcion){
+				case 0:
+					System.exit(0);	
+					break;
+				case 1:
+					System.out.print("");
+					hogar.jugar();
+					seguir = true;
+					break;
+				case 2:
+					System.out.print("");
+					hogar.alimentar();
+					seguir = true;
+					
+					break;
+				case 3:
+					System.out.print("");
+					hogar.dormir();
+					seguir = true;
+					break;
+				case 4:
+					System.out.print("");
+					hogar.despertar();
+					seguir = true;
+					break;
+				case 5:
+					System.out.print("");
+					System.out.println("		(Aqui se imprime la info de la mascota)");
+					seguir = true;
+					break;
+			}
+			
+		/*	if(!hogar.estaVivo()){
+				seguir = false;
+			}*/
+			
+		}while(seguir);
+	//}
 	}
 	
 	

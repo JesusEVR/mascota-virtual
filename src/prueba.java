@@ -11,25 +11,24 @@ import Prototype.MascotaVirtual;
 import Prototype.MuertePorAburrimientoException;
 import Prototype.MuertePorCansancioException;
 import Prototype.MuertePorIntoxicacionException;
-import Prototype.MuertePorNoComerException;*/
-import State.Hogar;
-
+import Prototype.MuertePorNoComerException;
+import State.Hogar;*/
+import Facade.CentroAdopcion;
 
 public class prueba{
 	public static void main(String[] args){
-		
+	//Composite
 		/*Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, 12,-5); //precio, hambre,felicidad
-		//Composite
 		Inventario inventario = new Inventario();
 		inventario.agregarProducto(p);
 		System.out.println("***AÑADIR ALIMENTOS AL REFRIGERADOR *** (prueba composite)");
 		System.out.println( "(version para imprimir la info del refrigerador)"+"\n"+ inventario.informacion());
 		System.out.println("");
 		System.out.println("(version para imprimir la info del menu)" +"\n"+ inventario.informacionConPrecio());
-	
-		System.out.println("");
-		//Iterator
-		Producto pr;
+		System.out.println("");*/
+		
+	//Iterator
+		/*Producto pr;
 		Catalogo c = new CatalogoAlimento();
 		Iterator i = c.creaIterador();
 		System.out.println("*** MENU DE ALIMENTOS *** (prueba iterator)");
@@ -49,8 +48,10 @@ public class prueba{
 		//BaseDeDatosMascotas base = new BaseDeDatosMascotas();
 		//base.mascotasDisponibles();
 		
-		//CrearMascota crear = new CrearMascota();	                  //hambre,energia,felicidad,saldo
-		//MascotaVirtual miMascota = crear.mascotaAsignarNivel("cherk", 50, 100, 230, 40);
+		
+	//State
+		/*CrearMascota crear = new CrearMascota();	                  //hambre,energia,felicidad,saldo
+		MascotaVirtual miMascota = crear.mascotaAsignarNivel("cherk", 50, 100, 230, 40);
 		
 		Hogar h = new Hogar();
 		
@@ -58,9 +59,9 @@ public class prueba{
 		h.dormir();
 		h.despertar();
 		h.jugar();
-		h.alimentar();
-	
+		h.alimentar();*/
 		
+	//Casos de muerte
 		/*try{
 		miMascota.jugar(9,-14,4); //hambre,energia,felicdidad
 		miMascota.informacion();
@@ -88,6 +89,9 @@ public class prueba{
 		}catch(MuertePorAburrimientoException ex){
 			System.out.println("Tu mascota se cansó de comer cosas aburridas y se deprimió, falleció por aburrimiento");
 		}*/
+		
+		CentroAdopcion c = new CentroAdopcion();
+		c.convivir();
 		
 	}
 }
