@@ -1,4 +1,4 @@
-import Composite.Producto;
+/*import Composite.Producto;
 import Composite.Alimento;
 import Composite.Inventario;
 import Iterator.Catalogo;
@@ -11,12 +11,14 @@ import Prototype.MascotaVirtual;
 import Prototype.MuertePorAburrimientoException;
 import Prototype.MuertePorCansancioException;
 import Prototype.MuertePorIntoxicacionException;
-import Prototype.MuertePorNoComerException;
+import Prototype.MuertePorNoComerException;*/
+import State.Hogar;
+
 
 public class prueba{
 	public static void main(String[] args){
 		
-		Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, 12,-5); //precio, hambre,felicidad
+		/*Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, 12,-5); //precio, hambre,felicidad
 		//Composite
 		Inventario inventario = new Inventario();
 		inventario.agregarProducto(p);
@@ -34,23 +36,32 @@ public class prueba{
 		while(i.hasNext()){
 			pr = (Producto) i.next();
 			System.out.println(pr.informacionConPrecio());
-		}
+		}*/
 		
 	//Prototype	
-		MascotaVirtual prueba = new MascotaVirtual("Miguelito" , "Mi gato miguelito es bonito", "aqui va una imagen");
+		/*MascotaVirtual prueba = new MascotaVirtual("Miguelito" , "Mi gato miguelito es bonito", "aqui va una imagen");
 		prueba.asignarPuntosHambre(100);
 		prueba.asignarPuntosEnergia(100);
 		prueba.asignarPuntosFelicidad(50);
 		prueba.asignarSaldoInicial(123);
 		System.out.println(prueba);
-		prueba.informacion();
+		prueba.informacion();*/
 		//BaseDeDatosMascotas base = new BaseDeDatosMascotas();
 		//base.mascotasDisponibles();
 		
-		CrearMascota crear = new CrearMascota();	                  //hambre,energia,felicidad,saldo
-		MascotaVirtual miMascota = crear.mascotaAsignarNivel("cherk", 50, 100, 230, 40);
+		//CrearMascota crear = new CrearMascota();	                  //hambre,energia,felicidad,saldo
+		//MascotaVirtual miMascota = crear.mascotaAsignarNivel("cherk", 50, 100, 230, 40);
 		
-		try{
+		Hogar h = new Hogar();
+		
+		h.despertar();
+		h.dormir();
+		h.despertar();
+		h.jugar();
+		h.alimentar();
+	
+		
+		/*try{
 		miMascota.jugar(9,-14,4); //hambre,energia,felicdidad
 		miMascota.informacion();
 		}catch(MuertePorNoComerException e){
@@ -76,7 +87,7 @@ public class prueba{
 			System.out.println("Tu mascota murio comer algo que lo intoxicó");
 		}catch(MuertePorAburrimientoException ex){
 			System.out.println("Tu mascota se cansó de comer cosas aburridas y se deprimió, falleció por aburrimiento");
-		}
+		}*/
 		
 	}
 }
