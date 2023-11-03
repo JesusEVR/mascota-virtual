@@ -23,6 +23,11 @@ public class Inventario implements Producto{
 	public Inventario(){
 	}
 
+
+	public String nombre(){
+		return "0";
+	}
+
 	/**
 	 * Metodo que devuelve el precio total de los productos de la lista
          *
@@ -102,6 +107,18 @@ public class Inventario implements Producto{
 	 */
 	public boolean tieneProductos(){
 		return listaDeAlimentos.size()!=0;
+	}
+
+	public void eliminarProducto(Producto a){
+		listaDeAlimentos.remove(a);
+		
+	}
+	
+	public Producto encontrarProducto(String codigo){
+		for(Producto p : listaDeAlimentos){
+			if(p.codigo().equals(codigo)) return p;
+		}
+		return null;
 	}
 
 }

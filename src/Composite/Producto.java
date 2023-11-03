@@ -10,6 +10,9 @@ package Composite;
  *
  */
 public interface Producto{
+
+	public String nombre();
+
 	/**
 	 * Devuelve el precio del artículo
 	 */

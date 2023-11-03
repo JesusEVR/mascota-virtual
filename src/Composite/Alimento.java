@@ -55,6 +55,10 @@ public class Alimento implements Producto{
 		this.puntosFelicidad = puntosFelicidad;
 	}
 
+	public String nombre(){
+		return nombre;
+	}
+
 	/**
 	 * Devuelve el precio del artículo
          *
