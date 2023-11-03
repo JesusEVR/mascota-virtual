@@ -19,7 +19,7 @@ public interface Producto{
 	 */
 	public String informacion();
 	/**
-	 * Devuelve uuna cadena con la información y el precio del artículo
+	 * Devuelve una cadena con la información y el precio del artículo
 	 */
 	public String informacionConPrecio();
 	/**
