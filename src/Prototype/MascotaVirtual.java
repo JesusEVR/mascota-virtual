@@ -1,8 +1,7 @@
 package Prototype;
 
 import Composite.Producto;
-import Composite.Alimento;
-	
+
 public class MascotaVirtual implements Cloneable{
 
 	private double PUNTOS_HAMBRE; //Este es el valor maximo

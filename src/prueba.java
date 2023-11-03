@@ -1,3 +1,5 @@
+import Prototype.MascotaVirtual;
+import State.Hogar;
 /*import Composite.Producto;
 import Composite.Alimento;
 import Composite.Inventario;
@@ -7,7 +9,7 @@ import Iterator.IteradorLista;
 import java.util.Iterator;
 import Prototype.CrearMascota;
 import Prototype.BaseDeDatosMascotas;
-import Prototype.MascotaVirtual;
+
 import Prototype.MuertePorAburrimientoException;
 import Prototype.MuertePorCansancioException;
 import Prototype.MuertePorIntoxicacionException;
@@ -97,9 +99,7 @@ public class prueba{
 		c.adoptar();
 		c.convivir();
 		c.darFelicitacion();
-		
-		
-		
+	
 		
 	}
 }

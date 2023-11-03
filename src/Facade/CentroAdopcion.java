@@ -9,12 +9,12 @@ public class CentroAdopcion{
 	
 	private MascotaVirtual mascota;
 	private boolean continuar=false;
-	private Hogar hogar;
 	private Scanner sc = new Scanner(System.in);
 	private String nivel="";
+	private  Hogar hogar;
 	
 	public CentroAdopcion(){
-		hogar = new Hogar();
+		
 	}
 	
 	public void darBienvenida(){
@@ -72,6 +72,7 @@ public class CentroAdopcion{
 
 	public void adoptar(){
 		if(continuar){
+			
 		System.out.println(" ");
 		System.out.println("-----------------A D O P C I O N------------------------"); 
 		boolean mascotaExiste=false;
@@ -101,20 +102,22 @@ public class CentroAdopcion{
 	
 	public void convivir(){
 		if(continuar){
+			
+		hogar = new Hogar(mascota);
 		boolean seguir=false;
 		int opcion=0;
 		System.out.println("********* (Aqui va el nombre del juego) *********");
 	
 		do{
 		System.out.println(" "); 
-		System.out.println("	------------ M E N U -----------");
+		System.out.println("	*-*-*-*-*-* M E N U *-*-*-*-*-*");
 		System.out.println("			1. Jugar con mi mascota");
 		System.out.println("			2. Alimentar a mi mascota");
 		System.out.println("			3. Darle las buenas noches"); 
-		System.out.println("			4. Darle los buenos dias"); //despertar 
+		System.out.println("			4. Darle los buenos dias");
 		System.out.println("			5. Ver mi mascota"); 
 		System.out.println("			0. Salir de la app");
-		System.out.println("	--------------------------------");
+		System.out.println("	*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*");
 
 		System.out.print("Selecciona la opción que deseas ejecutar: ");
 	
@@ -135,36 +138,36 @@ public class CentroAdopcion{
 						seguir = false;
 						break;
 					case 1:
-						System.out.print("");
+						System.out.println("");
 						hogar.jugar();
 						seguir = true;
 						break;
 					case 2:
-						System.out.print("");
+						System.out.println("");
 						hogar.alimentar();
 						seguir = true;
 
 						break;
 					case 3:
-						System.out.print("");
+						System.out.println("");
 						hogar.dormir();
 						seguir = true;
 						break;
 					case 4:
-						System.out.print("");
+						System.out.println("");
 						hogar.despertar();
 						seguir = true;
 						break;
 					case 5:
-						System.out.print("");
-						mascota.informacion();
+						System.out.println("");
+						hogar.infoMascota();
 						seguir = true;
 						break;
 				}
 
-				if(!hogar.estaVivo()){
+				/*if(!hogar.estaVivo()){
 					seguir = false;
-				}
+				}*/
 			
 			}while(seguir);
 		}
@@ -174,16 +177,16 @@ public class CentroAdopcion{
 	public void darFelicitacion(){ 
 		if(!continuar){
 			System.out.println(" ");
-			System.out.println("		Lastima que decidiste rechazar la mision :( ");
-			System.out.println("	Todas las mascotas fallecieron de tristeza por tu culpa u.u");
+			System.out.println("			Lastima que decidiste rechazar la mision :( ");
+			System.out.println("		Todas las mascotas fallecieron de tristeza por tu culpa u.u");
 		}else if(hogar.estaVivo()){
 			System.out.println(" ");
-			System.out.println("	¡Felicidades, cumpliste tu mision. Tu mascota sobrevivio (aqui va la cantidad de dias) ");
+			System.out.println("		¡Felicidades, cumpliste tu mision. Tu mascota sobrevivio (aqui va la cantidad de dias) ");
 		
-		}else if(!hogar.estaVivo()){ //(El usuario acepta la mision pero la mascota muere)
+		}else if(!hogar.estaVivo()){ 
 			System.out.println(" ");
-			System.out.println("		¡Tu macota fallecio!");
-			System.out.println("	¿Como sucedio esto? Tenias un solo deber >:/");
+			System.out.println("					¡Tu mascota fallecio!");
+			System.out.println("			¿Como sucedio esto? Tenias un solo deber >:/");
 		}
 	
 		

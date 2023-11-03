@@ -1,13 +1,18 @@
 package State;
 
-import Prototype.MascotaVirtual;
 import Iterator.Catalogo;
 import Iterator.CatalogoAlimento;
 import Iterator.IteradorLista;
 import java.util.Iterator;
-import Composite.Producto;
 import Composite.Alimento;
 import Composite.Inventario;
+import Composite.Producto;
+import Composite.Alimento;
+import Prototype.MascotaVirtual;
+import Prototype.MuertePorAburrimientoException;
+import Prototype.MuertePorCansancioException;
+import Prototype.MuertePorIntoxicacionException;
+import Prototype.MuertePorNoComerException;	
 
 public class Hogar{
 	
@@ -24,8 +29,8 @@ public class Hogar{
 	private Catalogo catalogo;
 	private Inventario almacen;
 	
-	public Hogar(){//(MascotaVirtual mascota){
-		//this.mascota = mascota;
+	public Hogar(MascotaVirtual mascota){
+		this.mascota = mascota;
 		catalogo = new CatalogoAlimento();
 		almacen = new Inventario();
 		modoSuspendido = new ModoSuspender(this);
@@ -37,6 +42,9 @@ public class Hogar{
 		estadoActual  = modoSuspendido;
 	}
 	
+	public void infoMascota(){
+		mascota.informacion();
+	}
 	
 	public void asignarNuevoEstado(EstadoMascota modo){
 		estadoActual = modo;
@@ -92,6 +100,19 @@ public class Hogar{
 	
 	public boolean estaVivo(){
 		return estaVivo;
+	}
+	
+	
+	public void jugarConMascota(double hambre, double energia, double felicidad)throws MuertePorNoComerException, MuertePorCansancioException{
+		mascota.jugar(hambre, energia, felicidad);
+	}
+	
+	public void dormirMascota(double felicidad) throws MuertePorAburrimientoException{
+		mascota.dormir(felicidad);
+	}
+	
+	public void alimentarMascota(Producto p)throws MuertePorIntoxicacionException, MuertePorAburrimientoException{
+		mascota.comer(p);
 	}
 	
 	public void verCatalogo(){

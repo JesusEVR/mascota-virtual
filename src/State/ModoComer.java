@@ -15,14 +15,14 @@ public class ModoComer implements EstadoMascota{
 		hogar.asignarNuevoEstado(hogar.modoSuspender());
 	}
 	public void jugar(){
-		System.out.println("¿No me ibas a alimentar antes? :(");
+		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
 		
 	}
 	public void dormir(){
-		System.out.println("¿No me ibas a alimentar antes? :(");
+		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
 	}
 	public void despertar(){
-		System.out.println("Estoy despierto :/");
+		System.out.println("\n"+"				Estoy despierto :/");
 	}
 
 
