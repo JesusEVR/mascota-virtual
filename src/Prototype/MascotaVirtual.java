@@ -129,6 +129,9 @@ public class MascotaVirtual implements Cloneable{
 	
 	public String estadoActual(){
 		String estado="";
+		
+		if(puntosHambre<=0 || puntosEnergia<=0 ||puntosFelicidad<=0) return "Fallecido u.u";
+		
 		if(!tieneSuenio() && !tieneHambre() && !estaAburrido()){
 			return mensajeFeliz; 
 		}
@@ -149,10 +152,10 @@ public class MascotaVirtual implements Cloneable{
 	
 	public void informacion(){
 		String infoMascota = "****************************************************************" +"\n"
-			+ "Nombre: " +nombre + "\n"
 			+ imagenMascota + "\n"
+			+ "Nombre: " +nombre + "\n"
 			+ "\n"+"Descripcion: " + descripcion + "\n"
-			+ "Monedero electronico: $" + saldo +" pejecoins "+ "\n"
+			+ "\n"+"Monedero electronico: $" + saldo +" pejecoins "+ "\n"
 			+ "Hambre: " + puntosHambre() + "/" + PUNTOS_HAMBRE + "\n"
 			+ "Energia: " + puntosEnergia() + "/" + PUNTOS_ENERGIA + "\n"
 			+ "Felicidad: " + puntosFelicidad() + "/" + PUNTOS_FELICIDAD + "\n"
@@ -163,8 +166,8 @@ public class MascotaVirtual implements Cloneable{
 	
 	public String toString(){
 		String mascota = "****************************************************************"+"\n"
-			+ "Nombre: " +nombre + "\n"
 			+ imagenMascota + "\n"
+			+ "Nombre: " +nombre + "\n"
 			+ "Descripcion: " + descripcion + "\n"
 			+ "****************************************************************";
 		return mascota;

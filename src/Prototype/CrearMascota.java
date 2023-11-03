@@ -23,9 +23,7 @@ public class CrearMascota{
 
 	private MascotaVirtual mascotaAsignarNivel(String nombre, double puntosHambre, double puntosEnergia, double puntosFelicidad, double saldo){
 		MascotaVirtual mascota = baseDatos.obtenerMascota(nombre.toUpperCase());
-		
 		if(mascota==null) throw new NullPointerException("No existe una mascota con el nombre ingresado"); 
-		
 		mascota.asignarPuntosHambre(puntosHambre);
 		mascota.asignarPuntosEnergia(puntosEnergia);
 		mascota.asignarPuntosFelicidad(puntosFelicidad);
@@ -34,24 +32,52 @@ public class CrearMascota{
 	}
 	
 	private void crearMascotaNivelFacil(){
-		MascotaVirtual cherkFacil = mascotaAsignarNivel("cherk",120,100,80,40);
-		MascotaVirtual ugandianoFacil = mascotaAsignarNivel("ugandiano",90,90,90,50);
-		MascotaVirtual floppaFacil = mascotaAsignarNivel("floppa",100,80,90,45);
+		MascotaVirtual cherk = mascotaAsignarNivel("cherk",120,100,80,40);
+		cherk.mensajeFeliz("La felicidad es como una cebolla, ¡tiene capas! ");
+		cherk.mensajeSuenio("Soy un ogro, no un corderito. ¡Déjame dormir! ");
+		cherk.mensajeHambre("¿Dónde está mi comida, Burro? ");
+		cherk.mensajeAburrido("Este aburrimiento es peor que un pantano sin lodo, ¡y eso ya es decir algo! ");
 		
-		mascotasNivelFacil.put(cherkFacil.nombre(), cherkFacil);
-		mascotasNivelFacil.put(ugandianoFacil.nombre(), ugandianoFacil);
-		mascotasNivelFacil.put(floppaFacil.nombre(), floppaFacil);
+		MascotaVirtual ugandiano = mascotaAsignarNivel("ugandiano",90,90,90,50);
+		ugandiano.mensajeFeliz("Felicidad aumentada, te sigo my queen. ");
+		ugandiano.mensajeSuenio("Estoy cansado, ya no puedo seguirte my queen. ");
+		ugandiano.mensajeHambre("Necesito comida my queen. ");
+		ugandiano.mensajeAburrido("El aburrimiento está pudiendo conmigo, my queen. ");
+		
+		MascotaVirtual floppa = mascotaAsignarNivel("floppa",100,80,90,45);
+		floppa.mensajeFeliz("Prrrr… buenos momos equisdedede *procede a correr sin sentido. ");
+		floppa.mensajeSuenio(" Humano, estoy... cansado...grr. ");
+		floppa.mensajeHambre("Grrr, dame alimento, humano. ");
+		floppa.mensajeAburrido("Grr, aaaaa saca algo para hacer, humano. ");
+		
+		mascotasNivelFacil.put(cherk.nombre(), cherk);
+		mascotasNivelFacil.put(ugandiano.nombre(), ugandiano);
+		mascotasNivelFacil.put(floppa.nombre(), floppa);
 		
 	}
 	
 	private void crearMascotaNivelDificil(){
-		MascotaVirtual cherkDificil = mascotaAsignarNivel("cherk",120,100,80,40);
-		MascotaVirtual ugandianoDificil = mascotaAsignarNivel("ugandiano",90,90,90,50);
-		MascotaVirtual floppaDificil = mascotaAsignarNivel("floppa",100,80,90,45);
+		MascotaVirtual cherk = mascotaAsignarNivel("cherk",120,100,80,40);
+		cherk.mensajeFeliz("Hoy es un buen día para disfrutar de la tranquilidad del pantano, amigo. ");
+		cherk.mensajeSuenio("Soy un ogro, no un corderito. ¡Déjame dormir! ");
+		cherk.mensajeHambre("¿Dónde está mi comida, Burro? ");
+		cherk.mensajeAburrido("Este aburrimiento es peor que un pantano sin lodo, ¡y eso ya es decir algo! ");
 		
-		mascotasNivelFacil.put(cherkDificil.nombre(), cherkDificil);
-		mascotasNivelFacil.put(ugandianoDificil.nombre(), ugandianoDificil);
-		mascotasNivelFacil.put(floppaDificil.nombre(), floppaDificil);
+		MascotaVirtual ugandiano = mascotaAsignarNivel("ugandiano",90,90,90,50);
+		ugandiano.mensajeFeliz("Ello my queen, muéstrame 'da wae' ");
+		ugandiano.mensajeSuenio("Estoy cansado, ya no puedo seguirte my queen. ");
+		ugandiano.mensajeHambre("Necesito comida my queen. ");
+		ugandiano.mensajeAburrido("El aburrimiento está pudiendo conmigo, my queen. ");
+		
+		MascotaVirtual floppa = mascotaAsignarNivel("floppa",100,80,90,45);
+		floppa.mensajeFeliz("Grr hola humano equisde. ");
+		floppa.mensajeSuenio(" Humano, estoy... cansado...grr. ");
+		floppa.mensajeHambre("Grrr, dame alimento, humano. ");
+		floppa.mensajeAburrido("Grr, aaaaa saca algo para hacer, humano. ");
+		
+		mascotasNivelDificil.put(cherk.nombre(), cherk);
+		mascotasNivelDificil.put(ugandiano.nombre(), ugandiano);
+		mascotasNivelDificil.put(floppa.nombre(), floppa);
 		
 	}
 	

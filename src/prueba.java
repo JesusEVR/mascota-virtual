@@ -92,11 +92,10 @@ public class prueba{
 		
 		CentroAdopcion c = new CentroAdopcion();
 		
-		c.elegirNivel();
-		
 		c.darBienvenida();
+		c.elegirNivel();
 		c.adoptar();
-		//c.convivir();
+		c.convivir();
 		c.darFelicitacion();
 		
 		

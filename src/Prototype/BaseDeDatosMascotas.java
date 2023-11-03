@@ -73,7 +73,7 @@ public class BaseDeDatosMascotas{
 		MascotaVirtual cherk = new MascotaVirtual("CHERK", desCherk , cherkPic);
 		MascotaVirtual ugandiano = new MascotaVirtual("UGANDIANO", desUgandiano , ugandianoPic);
 		MascotaVirtual floppa = new MascotaVirtual("FLOPPA" ,desFloppa, floppaPic);
-		
+	
 		mascotas.put(cherk.nombre(), cherk);
 		mascotas.put(ugandiano.nombre(), ugandiano);
 		mascotas.put(floppa.nombre(), floppa);
@@ -85,7 +85,7 @@ public class BaseDeDatosMascotas{
 	}
 	
 	public void mascotasDisponibles(){
-		System.out.println("----- M A S C O T A S    D I S P O N I B L E S -----");
+		System.out.println("		 M A S C O T A S    D I S P O N I B L E S" +"\n");
 		for (MascotaVirtual m : mascotas.values()) {
     		System.out.println(m);
 			System.out.println("");
