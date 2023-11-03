@@ -110,14 +110,14 @@ public class CentroAdopcion{
 	
 		do{
 		System.out.println(" "); 
-		System.out.println("	*-*-*-*-*-* M E N U *-*-*-*-*-*");
+		System.out.println("			*-*-*-*-* M E N U *-*-*-*-*");
 		System.out.println("			1. Jugar con mi mascota");
 		System.out.println("			2. Alimentar a mi mascota");
 		System.out.println("			3. Darle las buenas noches"); 
 		System.out.println("			4. Darle los buenos dias");
 		System.out.println("			5. Ver mi mascota"); 
 		System.out.println("			0. Salir de la app");
-		System.out.println("	*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*");
+		System.out.println("			*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 
 		System.out.print("Selecciona la opción que deseas ejecutar: ");
 	

@@ -27,12 +27,12 @@ public class Hogar{
 	private boolean estaDormido = false;
 	private boolean estaVivo=true;
 	private Catalogo catalogo;
-	private Inventario almacen;
+	private Inventario refrigerador;
 	
 	public Hogar(MascotaVirtual mascota){
 		this.mascota = mascota;
 		catalogo = new CatalogoAlimento();
-		almacen = new Inventario();
+		refrigerador = new Inventario();
 		modoSuspendido = new ModoSuspender(this);
 		modoComer = new ModoComer(this);
 		modoJugar = new ModoJugar(this);
@@ -126,22 +126,50 @@ public class Hogar{
 	}
 	
 	
-	public boolean almacenVacio(){
-		return !almacen.tieneProductos();
+	public boolean refrigeradorVacio(){
+		return !refrigerador.tieneProductos();
 	}
 	
 	
-	public void verAlmacen(){
-		System.out.println("***** A L M A C E N *****");
-		almacen.informacion();
+	public void verRefrigerador(){
+		System.out.println("		*-*-*-*-* R E F R I GE R A D O R *-*-*-*-*");
+		if(refrigeradorVacio()){
+			System.out.println("	Este refrigerador esta vacio o.O");
+		}else {
+			System.out.println(refrigerador.informacion());
+		}
+		System.out.println("		*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 	}
 	
+	public Producto buscarEnRefrigerador(String codigo){ 
+		Producto p = refrigerador.encontrarProducto(codigo);
+		if(p != null){
+			refrigerador.eliminarProducto(p);
+			return p;
+		}
+		return null;
+	}
 	
 	public Producto buscarEnCatalogo(String codigo){ //Busca el alimento en el catalogo
+		Producto p;
+		Iterator i = catalogo.creaIterador();
+		
+		while(i.hasNext()){
+			p = (Producto) i.next();
+			if(p.codigo().equals(codigo)) return p;
+		}	
+		
 		return null;
 	}
 
 	public void irAlMinisuper(){ //Operaciones para comprar alimentos, verifica que el dinero le alcance
+		System.out.println("llendo al minisuper");
+		Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, -102,-50); 
+		refrigerador.agregarProducto(p);
+	}
+	
+	public boolean tieneDinero(){
+		return mascota.saldo()>=10;
 	}
 	
 	

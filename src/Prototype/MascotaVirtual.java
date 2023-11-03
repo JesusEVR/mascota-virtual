@@ -176,8 +176,7 @@ public class MascotaVirtual implements Cloneable{
 		double nuevaHambre = puntosHambre + hambre;
 		double nuevaEnergia = puntosEnergia+energia;
 		
-		if(nuevaHambre<=0) throw new MuertePorNoComerException();
-		if(nuevaEnergia<=0) throw new MuertePorCansancioException();
+		
 		
 		if(nuevaHambre > PUNTOS_HAMBRE){
 			puntosHambre = PUNTOS_HAMBRE;
@@ -191,22 +190,35 @@ public class MascotaVirtual implements Cloneable{
 			puntosFelicidad = PUNTOS_FELICIDAD;
 		}else{puntosFelicidad += felicidad;}
 		
+		
+		if(puntosHambre <= 0){
+			puntosHambre = 0;
+		}
+		if(puntosEnergia <= 0){
+			puntosEnergia = 0;
+		}
+
+		if(puntosHambre==0) throw new MuertePorNoComerException();
+		
+		if(puntosEnergia==0) throw new MuertePorCansancioException();
+		
+		
 	}
 	
 	public void dormir(double felicidad) throws MuertePorAburrimientoException{
 		puntosEnergia = PUNTOS_ENERGIA; //siempre recupera el sueño
 		puntosFelicidad -= felicidad; //disminuye su felicidad
 		
-		if(puntosFelicidad<=0) throw new MuertePorAburrimientoException();
+		if(puntosFelicidad<=0){
+			puntosFelicidad = 0;
+			throw new MuertePorAburrimientoException();
+		}
 		
 	}
 	
 	public void comer(Producto p)throws MuertePorIntoxicacionException, MuertePorAburrimientoException{
 		double nuevaHambre = puntosHambre + p.modificaHambre();
 		double nuevaFelicidad = puntosFelicidad + p.modificaFelicidad();
-		
-		if(nuevaHambre<=0) throw new MuertePorIntoxicacionException();
-		if(nuevaFelicidad<=0) throw new MuertePorAburrimientoException();
 		
 		if(nuevaHambre > PUNTOS_HAMBRE){
 			puntosHambre = PUNTOS_HAMBRE;
@@ -215,5 +227,19 @@ public class MascotaVirtual implements Cloneable{
 		if( nuevaFelicidad > PUNTOS_FELICIDAD){
 			puntosFelicidad = PUNTOS_FELICIDAD;
 		}else{ puntosFelicidad += p.modificaFelicidad() ; }
+		
+		
+		if(puntosFelicidad <= 0){
+			puntosFelicidad = 0;
+		}
+		if(puntosHambre <= 0){
+			puntosHambre = 0;
+		}
+		
+		
+		if(puntosHambre==0) throw new MuertePorIntoxicacionException();
+		if(puntosFelicidad==0) throw new MuertePorAburrimientoException();
+		
+		
 	}
 }
