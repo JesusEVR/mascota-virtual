@@ -11,20 +11,23 @@ package Composite;
  */
 public interface Producto{
 
+	/**
+	* Devuelve el nombre del producto
+	*/
 	public String nombre();
 
 	/**
-	 * Devuelve el precio del artículo
+	 * Devuelve el precio del producto
 	 */
 	public double precio();
 	
 	/**
-	 * Devuelve una cadena con la información del artículo
+	 * Devuelve una cadena con la información del producto
 	 */
 	public String informacion();
 	
 	/**
-	 * Devuelve una cadena con la información y el precio del artículo
+	 * Devuelve una cadena con la información y el precio del producto
 	 */
 	public String informacionConPrecio();
 	

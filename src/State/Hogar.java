@@ -127,6 +127,7 @@ public class Hogar{
 	
 	
 	public boolean refrigeradorVacio(){
+		refrigerador.eliminarSubinventarios();
 		return !refrigerador.tieneProductos();
 	}
 	
@@ -134,7 +135,7 @@ public class Hogar{
 	public void verRefrigerador(){
 		System.out.println("		*-*-*-*-* R E F R I GE R A D O R *-*-*-*-*");
 		if(refrigeradorVacio()){
-			System.out.println("	Este refrigerador esta vacio o.O");
+			System.out.println("			Este refrigerador esta vacio o.O");
 		}else {
 			System.out.println(refrigerador.informacion());
 		}
@@ -143,11 +144,7 @@ public class Hogar{
 	
 	public Producto buscarEnRefrigerador(String codigo){ 
 		Producto p = refrigerador.encontrarProducto(codigo);
-		if(p != null){
-			refrigerador.eliminarProducto(p);
-			return p;
-		}
-		return null;
+		return p;
 	}
 	
 	public Producto buscarEnCatalogo(String codigo){ //Busca el alimento en el catalogo
@@ -163,9 +160,11 @@ public class Hogar{
 	}
 
 	public void irAlMinisuper(){ //Operaciones para comprar alimentos, verifica que el dinero le alcance
-		System.out.println("llendo al minisuper");
+		System.out.println("*-*-*-*-* M I  N I - S U P E R *-*-*-*-*-*");
+		Inventario i = new Inventario();
 		Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, -102,-50); 
-		refrigerador.agregarProducto(p);
+		i.agregarProducto(p);
+		refrigerador.agregarProducto(i);
 	}
 	
 	public boolean tieneDinero(){

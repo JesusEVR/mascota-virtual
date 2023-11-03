@@ -1,9 +1,9 @@
-import Prototype.MascotaVirtual;
-import State.Hogar;
-/*import Composite.Producto;
+//import Prototype.MascotaVirtual;
+//import State.Hogar;
+import Composite.Producto;
 import Composite.Alimento;
 import Composite.Inventario;
-import Iterator.Catalogo;
+/*import Iterator.Catalogo;
 import Iterator.CatalogoAlimento;
 import Iterator.IteradorLista;
 import java.util.Iterator;
@@ -20,14 +20,29 @@ import Facade.CentroAdopcion;
 public class prueba{
 	public static void main(String[] args){
 	//Composite
-		/*Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, 12,-5); //precio, hambre,felicidad
-		Inventario inventario = new Inventario();
-		inventario.agregarProducto(p);
-		System.out.println("***AÑADIR ALIMENTOS AL REFRIGERADOR *** (prueba composite)");
-		System.out.println( "(version para imprimir la info del refrigerador)"+"\n"+ inventario.informacion());
-		System.out.println("");
-		System.out.println("(version para imprimir la info del menu)" +"\n"+ inventario.informacionConPrecio());
-		System.out.println("");*/
+	/*	Producto p = new Alimento("00","Hamburguesa", "es mortal", 23.0, 12,-5); 
+		Producto p2 = new Alimento("01","manzana", "es verde", 2.0, 12,-5); 
+		Inventario carrito = new Inventario();
+		carrito.agregarProducto(p);
+		
+		
+		Inventario carrito2 = new Inventario();
+		carrito2.agregarProducto(p2);
+		Inventario refrigerador = new Inventario();
+	
+		refrigerador.agregarProducto(carrito);
+		refrigerador.agregarProducto(carrito2);
+		System.out.println("***"+refrigerador.tieneProductos());
+		//System.out.println("refri tiene cosas: "+refrigerador.tieneProductos());
+		//System.out.println("carrito tiene cosas: "+carrito.tieneProductos());
+		//System.out.println(refrigerador.informacionConPrecio());
+		//Producto pr = refrigerador.encontrarProducto("00");
+		//Producto pro = refrigerador.encontrarProducto("01");
+		
+		refrigerador.eliminarSubinventarios();
+		System.out.println("***"+refrigerador.tieneProductos());
+		System.out.println(refrigerador.informacionConPrecio());*/
+		
 		
 	//Iterator
 		/*Producto pr;

@@ -1,6 +1,7 @@
 package Composite;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * Clase que define las caracteristicas principales de un inventario que guarda productos
@@ -23,14 +24,16 @@ public class Inventario implements Producto{
 	public Inventario(){
 	}
 
-
+	/**
+	* Devuelve nombre '0' por defecto 
+	*/
 	public String nombre(){
 		return "0";
 	}
 
 	/**
 	 * Metodo que devuelve el precio total de los productos de la lista
-         *
+     *
 	 * @return precio El precio total de los productos dentro un inventario
 	 */
 	public double precio(){
@@ -109,16 +112,54 @@ public class Inventario implements Producto{
 		return listaDeAlimentos.size()!=0;
 	}
 
+	
 	public void eliminarProducto(Producto a){
 		listaDeAlimentos.remove(a);
-		
 	}
 	
+	/**
+	* Metodo que busca un producto por su codigo. Si el inventario
+	* tiene mas objetos inventarios dentro, busca tambien en ellos.
+	*
+	* @param codigo Codigo del producto a buscar
+	* @return p Producto que coincide con el codigo
+	*
+	*/
 	public Producto encontrarProducto(String codigo){
+		Inventario inventario;
+		Producto producto;
 		for(Producto p : listaDeAlimentos){
-			if(p.codigo().equals(codigo)) return p;
+			if(codigo.equals(p.codigo())){
+				producto = p;
+				listaDeAlimentos.remove(p);
+				return producto;
+			}else if(p.codigo().equals("0")){
+				inventario = (Inventario) p;
+				return inventario.encontrarProducto(codigo);
+			}
 		}
 		return null;
 	}
-
+	
+	/**
+	* Metodo auxiliar que elimina objetos <Inventario> que esten vacios 
+	* y se encuentren dentro de la listaDeAlimentos del objeto Inventario actual
+	*
+	*/
+	public void eliminarSubinventarios(){
+		Stack<Producto> auxiliar = new Stack<>();
+		Inventario inventario;
+		for(Producto p : listaDeAlimentos){
+			if(p.codigo().equals("0")){
+				inventario = (Inventario) p;
+				if(!inventario.tieneProductos()){
+					auxiliar.add(p);
+				}
+			}
+		}
+		
+		for(Producto pro : auxiliar){
+			this.eliminarProducto(pro);
+		}
+	}
 }

@@ -55,6 +55,9 @@ public class Alimento implements Producto{
 		this.puntosFelicidad = puntosFelicidad;
 	}
 
+	/**
+	* Devuelve el nombre del alimento
+	*/
 	public String nombre(){
 		return nombre;
 	}
@@ -88,7 +91,7 @@ public class Alimento implements Producto{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Codigo: "+codigo+ " Alimento: " + nombre +"\n"+"Descripcion: " + descripcion;
+		return "Codigo: "+codigo+ " Alimento: " + nombre +"\n"+"	Descripcion: " + descripcion;
 	}
 
 	/**
