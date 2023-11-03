@@ -16,11 +16,9 @@ public class ModoComer implements EstadoMascota{
 	}
 	
 	public void alimentar(){ //aqui se alimenta y se va de compras de ser necesario
+		verificarRefrigerador(); //-> verifica que le refri no este vacio
 		
-		
-		verificarRefrigerador();
-		
-		if(puedeComer){
+		if(puedeComer){ //puedeComer -> true si hay algo en el refri
 		boolean seguir =false;
 		Producto alimento=null;
 		int opcion=0;
@@ -138,9 +136,12 @@ public class ModoComer implements EstadoMascota{
 					
 					if(opcionUsuario.equalsIgnoreCase("si")){ 
 						
-							hogar.irAlMinisuper(); //falta verificar que haya podido comprar algo
+							hogar.irAlMinisuper(); 
+						//if(hogar.pudoComprar()){ <- quitar cuando se implemente irAlMinisuper
 							puedeComer=true;
-						
+						//}else{
+						// hogar.asignarNuevoEstado(hogar.modoSuspender());
+						//}
 						break;
 					}else if(opcionUsuario.equalsIgnoreCase("no")){
 						System.out.println("\n"+"	No hay problema, pero recuerda cuidar bien a tu mascota");

@@ -28,6 +28,7 @@ public class Hogar{
 	private boolean estaVivo=true;
 	private Catalogo catalogo;
 	private Inventario refrigerador;
+	private boolean pudoComprar=false;
 	
 	public Hogar(MascotaVirtual mascota){
 		this.mascota = mascota;
@@ -165,11 +166,16 @@ public class Hogar{
 		Producto p = new Alimento("11","Hamburguesa", "es mortal", 23.0, -102,-50); 
 		i.agregarProducto(p);
 		refrigerador.agregarProducto(i);
+		
+		//pudoComprar(true); -> sucede si se realizó el pago exitosamente
 	}
 	
-	public boolean tieneDinero(){
-		return mascota.saldo()>=10;
+	public boolean pudoComprar(){
+		return pudoComprar;
 	}
 	
+	public void pudoComprar(boolean p){
+		pudoComprar=p;
+	}
 	
 }
