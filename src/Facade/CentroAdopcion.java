@@ -25,7 +25,7 @@ public class CentroAdopcion{
 		System.out.println("	Para alimentarlo debes elegir un alimento de tu refrigerador.");
 		System.out.println("	Si se acaba su comida, puedes comprar mas en la tienda.");
 		System.out.println("	Si no tienes monedas Pejecoins, puedes conseguir mas jugando.");
-		System.out.println("	Sencillo, ¿no? Lo interesante es averiguar cuantos dias puedes mantenerla viva.");
+		System.out.println("	Sencillo, ¿no? Lo interesante es averiguar cuantos dias puedes mantenerlo vivo.");
 		System.out.println(" ");
 		System.out.println("				¿Aceptas la mision? ");
 		System.out.println(" ");
@@ -33,10 +33,10 @@ public class CentroAdopcion{
 	
 	public void elegirNivel(){
 		int opcion=0;
-		System.out.println("----- N I V E L    D E   J U E G O ------"); 
-		System.out.println("		1. Facil"); 
-		System.out.println("		2. Dificil");
-		System.out.println("		0. Abandonar mision");
+		System.out.println("		----- N I V E L    D E   J U E G O ------"); 
+		System.out.println("			1. Facil"); 
+		System.out.println("			2. Dificil");
+		System.out.println("			0. Abandonar mision");
 		System.out.println(" ");
 		System.out.print("Antes de comenzar, selecciona el nivel de dificultad del juego: ");
 			while(true){
