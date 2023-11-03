@@ -91,7 +91,16 @@ public class prueba{
 		}*/
 		
 		CentroAdopcion c = new CentroAdopcion();
-		c.convivir();
+		
+		c.elegirNivel();
+		
+		c.darBienvenida();
+		c.adoptar();
+		//c.convivir();
+		c.darFelicitacion();
+		
+		
+		
 		
 	}
 }

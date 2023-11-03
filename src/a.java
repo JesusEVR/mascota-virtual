@@ -1,4 +1,4 @@
-public class a{
+/*public class a{
     public static void main(String[]args){
         String ugandianoPic =
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
@@ -63,4 +63,4 @@ public class a{
             "⠀⠈⠉⠉⠉⠉⠋⠉⠉⠁⠈⠉⠉⠉⠉⠉⠛⠛⠛⠛⠉⠁⠀⠀⠀⠉⠉⠁⠉⠈⠉⠀⠀⠀⠈⠀⠉⠀⠀⠀⠀⠀\n";
         System.out.println(floppaPic);
     }
-}
+}*/

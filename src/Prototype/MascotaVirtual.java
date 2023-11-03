@@ -15,9 +15,14 @@ public class MascotaVirtual implements Cloneable{
 	private String nombre;
 	private String descripcion;
 	private String imagenMascota; 
+	private String mensajeSuenio;
+	private String mensajeHambre;
+	private String mensajeAburrido;
+	private String mensajeFeliz;
 	
 	
-	public MascotaVirtual(String nombre, String descripcion, String imagenMascota){ //, double puntosHambre, double puntosEnergia, double puntosFelicidad, double saldo){
+	
+	public MascotaVirtual(String nombre, String descripcion, String imagenMascota){ 
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.imagenMascota = imagenMascota;
@@ -25,6 +30,26 @@ public class MascotaVirtual implements Cloneable{
 		puntosEnergia = 0;
 		puntosFelicidad = 0;
 		saldo = 0;
+		mensajeSuenio="Tengo sueño :( ";
+		mensajeHambre="Tengo hambre >:/ ";
+		mensajeAburrido= "Estoy aburrido :/  ";
+		mensajeFeliz = "Modo japi:)";
+	}
+	
+	public void mensajeFeliz(String m){
+		mensajeFeliz = m;
+	}
+	
+	public void mensajeSuenio(String m){
+		mensajeSuenio = m;
+	}
+	
+	public void mensajeHambre(String m){
+		mensajeHambre = m;
+	}
+	
+	public void mensajeAburrido(String m){
+		mensajeAburrido = m;
 	}
 	
 	public void asignarPuntosHambre(double valorMaximo){
@@ -49,10 +74,6 @@ public class MascotaVirtual implements Cloneable{
 		if(saldo!=0) throw new IllegalArgumentException("El saldo inicial ya fue asignado, no puedes regalar pejecoins"); 
 		saldo = montoInicial;
 	}
-	
-	/*public void asignarNuevaDescripcion(String d){
-		descripcion = d;
-	}*/
 	
 	public String nombre(){
 		return nombre;
@@ -109,25 +130,25 @@ public class MascotaVirtual implements Cloneable{
 	public String estadoActual(){
 		String estado="";
 		if(!tieneSuenio() && !tieneHambre() && !estaAburrido()){
-			return "Modo japi:)"; 
+			return mensajeFeliz; 
 		}
 		if(estaAburrido()){
-			estado += "Estoy aburrido :/  "; 
+			estado += mensajeAburrido; 
 		}
 		
 		if(tieneHambre()){
-			estado += "Tengo hambre >:/ "; 
+			estado += mensajeHambre; 
 		}
 		
 		if(tieneSuenio()){
-			estado += "Tengo sueño :( "; 
+			estado += mensajeSuenio; 
 		}
 		
 		return estado;
 	}
 	
 	public void informacion(){
-		String infoMascota = "****************" +"\n"
+		String infoMascota = "****************************************************************" +"\n"
 			+ "Nombre: " +nombre + "\n"
 			+ imagenMascota + "\n"
 			+ "\n"+"Descripcion: " + descripcion + "\n"
@@ -136,16 +157,16 @@ public class MascotaVirtual implements Cloneable{
 			+ "Energia: " + puntosEnergia() + "/" + PUNTOS_ENERGIA + "\n"
 			+ "Felicidad: " + puntosFelicidad() + "/" + PUNTOS_FELICIDAD + "\n"
 			+ "Estado: "+ estadoActual()+"\n"
-			+ "****************";
+			+ "****************************************************************";
 		System.out.println(infoMascota);
 	}
 	
 	public String toString(){
-		String mascota = "****************"+"\n"
+		String mascota = "****************************************************************"+"\n"
 			+ "Nombre: " +nombre + "\n"
 			+ imagenMascota + "\n"
 			+ "Descripcion: " + descripcion + "\n"
-			+ "****************";
+			+ "****************************************************************";
 		return mascota;
 	}
 	
