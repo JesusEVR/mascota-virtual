@@ -12,11 +12,13 @@ public class ModoDespertar implements EstadoMascota{
 		System.out.println("Dormi muy bien, ¿Ya es hora de comer?");
 		hogar.estaDormido(false);
 		hogar.asignarNuevoEstado(hogar.modoComer());
+		hogar.alimentar();
 	}
 	public void jugar(){
 		System.out.println("Dormi muy bien, ¿Ya es hora de jugar?");
 		hogar.estaDormido(false);
 		hogar.asignarNuevoEstado(hogar.modoJugar());
+		hogar.jugar();
 	}
 	public void dormir(){
 		System.out.println("Supongo que no dormí suficiente, toca dormir nuevamente");
