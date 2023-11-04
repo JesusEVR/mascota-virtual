@@ -15,7 +15,7 @@ public class Alimento implements Producto{
 	 */
 	private String codigo;
 	/**
-	 * Nombre del prodcuto
+	 * Nombre del producto
 	 */
 	private String nombre;
 	/**
@@ -56,8 +56,10 @@ public class Alimento implements Producto{
 	}
 
 	/**
-	* Devuelve el nombre del alimento
-	*/
+	 * Devuelve el nombre del alimento
+         *
+	 * @return nombre
+	 */
 	public String nombre(){
 		return nombre;
 	}
