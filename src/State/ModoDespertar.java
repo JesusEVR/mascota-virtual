@@ -11,19 +11,19 @@ public class ModoDespertar implements EstadoMascota{
 	}
 	
 	public void alimentar(){
-		System.out.println("\n"+"				Dormi muy bien, ¿Ya es hora de comer?");
+		System.out.println("\n"+hogar.nombreMascota()+":				Dormi muy bien, ¿Ya es hora de comer?");
 		hogar.estaDormido(false);
 		hogar.asignarNuevoEstado(hogar.modoComer());
 		hogar.alimentar();
 	}
 	public void jugar(){
-		System.out.println("\n"+"				Dormi muy bien, ¿Ya es hora de jugar?");
+		System.out.println("\n"+hogar.nombreMascota()+":				Dormi muy bien, ¿Ya es hora de jugar?");
 		hogar.estaDormido(false);
 		hogar.asignarNuevoEstado(hogar.modoJugar());
 		hogar.jugar();
 	}
 	public void dormir(){
-		System.out.println("\n"+"				Supongo que no dormí suficiente, toca dormir nuevamente");
+		System.out.println("\n"+hogar.nombreMascota()+"				Supongo que no dormí suficiente, toca dormir nuevamente");
 		hogar.asignarNuevoEstado(hogar.modoDormir());
 		try{
 			hogar.dormirMascota(10);
@@ -42,7 +42,7 @@ public class ModoDespertar implements EstadoMascota{
 
 	}
 	public void despertar(){
-		System.out.println("\n"+"				¡Ya he despertado!, ¿Que haremos hoy?");
+		System.out.println("\n"+hogar.nombreMascota()+":				¡Ya he despertado!, ¿Que haremos hoy?");
 		hogar.estaDormido(false);
 		hogar.asignarNuevoEstado(hogar.modoSuspender());
 	}

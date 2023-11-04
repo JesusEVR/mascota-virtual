@@ -11,18 +11,18 @@ public class ModoSuspender implements EstadoMascota{
 	}
 	
 	public void alimentar(){
-		System.out.println("\n"+"				¡Ya quiero comer!");
+		System.out.println("\n"+hogar.nombreMascota()+":				¡Ya quiero comer!");
 		hogar.asignarNuevoEstado(hogar.modoComer());
 		hogar.alimentar();
 		
 	}
 	public void jugar(){
-		System.out.println("\n"+"				¡Estoy ansioso por jugar!");
+		System.out.println("\n"+hogar.nombreMascota()+":				¡Estoy ansioso por jugar!");
 		hogar.asignarNuevoEstado(hogar.modoJugar());
 		hogar.jugar();
 	}
 	public void dormir(){
-		System.out.println("\n"+"				A mimir Zzzz..");
+		System.out.println("\n"+hogar.nombreMascota()+":				A mimir Zzzz..");
 		hogar.asignarNuevoEstado(hogar.modoDormir());
 		hogar.estaDormido(true);
 		

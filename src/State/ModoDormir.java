@@ -19,6 +19,7 @@ public class ModoDormir implements EstadoMascota{
 		
 	}
 	public void despertar(){
+		hogar.unDiaMasVivo();
 		System.out.println("\n"+"				Tu mascota te desea los buenos días, ¿Que harán hoy?");
 		hogar.asignarNuevoEstado(hogar.modoDespertar());
 		

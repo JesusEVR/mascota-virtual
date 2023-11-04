@@ -32,6 +32,7 @@ public class Hogar{
 	private Catalogo catalogo;
 	private Inventario refrigerador;
 	private boolean pudoComprar=false;
+	private int diasVivo=1;
 	
 	public Hogar(MascotaVirtual mascota){
 		this.mascota = mascota;
@@ -44,6 +45,18 @@ public class Hogar{
 		modoDespertar = new ModoDespertar(this);
 		modoMorir = new ModoMorir(this);
 		estadoActual  = modoSuspendido;
+	}
+	
+	public void unDiaMasVivo(){
+		diasVivo++;
+	}
+	
+	public int diasVivo(){
+		return diasVivo;
+	}
+	
+	public String nombreMascota(){
+		return mascota.nombre();
 	}
 	
 	public void infoMascota(){

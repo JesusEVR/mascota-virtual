@@ -3,11 +3,11 @@
 import Composite.Producto;
 import Composite.Alimento;
 import Composite.Inventario;
-/*import Iterator.Catalogo;
+import Iterator.Catalogo;
 import Iterator.CatalogoAlimento;
 import Iterator.IteradorLista;
 import java.util.Iterator;
-import Prototype.CrearMascota;
+/*import Prototype.CrearMascota;
 import Prototype.BaseDeDatosMascotas;
 
 import Prototype.MuertePorAburrimientoException;
@@ -45,7 +45,7 @@ public class prueba{
 		
 		
 	//Iterator
-		/*Producto pr;
+	/*	Producto pr;
 		Catalogo c = new CatalogoAlimento();
 		Iterator i = c.creaIterador();
 		System.out.println("*** MENU DE ALIMENTOS *** (prueba iterator)");

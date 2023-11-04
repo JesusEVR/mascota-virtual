@@ -181,7 +181,7 @@ public class CentroAdopcion{
 			System.out.println("		Todas las mascotas fallecieron de tristeza por tu culpa u.u");
 		}else if(hogar.estaVivo()){
 			System.out.println(" ");
-			System.out.println("		¡Felicidades, cumpliste tu mision. Tu mascota sobrevivio (aqui va la cantidad de dias) ");
+			System.out.println("		¡Felicidades!, cumpliste tu mision. Tu mascota sobrevivio " +hogar.diasVivo()+" dias" );
 		
 		}else if(!hogar.estaVivo()){ 
 			System.out.println(" ");

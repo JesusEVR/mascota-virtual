@@ -186,15 +186,15 @@ public class ModoComer implements EstadoMascota{
 	}
 	
 	public void jugar(){
-		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
+		System.out.println("\n"+hogar.nombreMascota()+":				¿No me ibas a alimentar antes? :(");
 	}
 	
 	public void dormir(){
-		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
+		System.out.println("\n"+hogar.nombreMascota()+":				¿No me ibas a alimentar antes? :(");
 	}
 	
 	public void despertar(){
-		System.out.println("\n"+"				Estoy despierto :/");
+		System.out.println("\n"+hogar.nombreMascota()+":				Estoy despierto :/");
 	}
 
 }
