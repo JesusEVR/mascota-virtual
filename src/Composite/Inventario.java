@@ -25,15 +25,15 @@ public class Inventario implements Producto{
 	}
 
 	/**
-	* Devuelve nombre '0' por defecto 
-	*/
+	 * Devuelve nombre '0' por defecto 
+	 */
 	public String nombre(){
 		return "0";
 	}
 
 	/**
 	 * Metodo que devuelve el precio total de los productos de la lista
-     *
+         *
 	 * @return precio El precio total de los productos dentro un inventario
 	 */
 	public double precio(){
