@@ -107,24 +107,30 @@ public class Inventario implements Producto{
 
 	/**
 	 * Metodo que determina si existe un producto dentro del inventario
+         *
+	 * @return 'true' en caso de que haya un elemento en el inventario, 'false' en el caso contrario
 	 */
 	public boolean tieneProductos(){
 		return listaDeAlimentos.size()!=0;
 	}
 
-	
+	/**
+	 * Metodo que elimina un producto en específico del inventario
+         *
+	 * @param a El producto que se busca eliminar
+	 */
 	public void eliminarProducto(Producto a){
 		listaDeAlimentos.remove(a);
 	}
 	
 	/**
-	* Metodo que busca un producto por su codigo. Si el inventario
-	* tiene mas objetos inventarios dentro, busca tambien en ellos.
-	*
-	* @param codigo Codigo del producto a buscar
-	* @return p Producto que coincide con el codigo
-	*
-	*/
+	 * Metodo que busca un producto por su codigo. Si el inventario
+	 * tiene mas objetos inventarios dentro, busca tambien en ellos.
+	 *
+	 * @param codigo Codigo del producto a buscar
+	 * @return p Producto que coincide con el codigo
+	 *
+	 */
 	public Producto encontrarProducto(String codigo){
 		Inventario inventario;
 		Producto producto;
@@ -142,10 +148,10 @@ public class Inventario implements Producto{
 	}
 	
 	/**
-	* Metodo auxiliar que elimina objetos <Inventario> que esten vacios 
-	* y se encuentren dentro de la listaDeAlimentos del objeto Inventario actual
-	*
-	*/
+	 * Metodo auxiliar que elimina objetos <Inventario> que esten vacios 
+	 * y se encuentren dentro de la listaDeAlimentos del objeto Inventario actual
+	 *
+	 */
 	public void eliminarSubinventarios(){
 		Stack<Producto> auxiliar = new Stack<>();
 		Inventario inventario;
