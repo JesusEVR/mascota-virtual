@@ -6,7 +6,7 @@ package Prototype;
  * @author paolasanv
  * @author Supr-Lilito
  * @author JesusEVR
- * @version octubre 2023
+ * @version noviembre 2023
  */
 public class SaldoInsuficienteException extends Exception{
 	
