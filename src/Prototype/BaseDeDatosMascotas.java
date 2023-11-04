@@ -18,7 +18,7 @@ public class BaseDeDatosMascotas{
 	private Hashtable<String , MascotaVirtual> mascotas = new Hashtable<>(); 
 
 	/**
-	 * Constrcutor por omision de la Base de Datos de Mascotas.
+	 * Constructor por omision de la Base de Datos de Mascotas.
          * Crea a las tres mascotas que serán almacenadas.
 	 */
 	public BaseDeDatosMascotas(){
