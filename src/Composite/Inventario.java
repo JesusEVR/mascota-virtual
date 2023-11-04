@@ -49,10 +49,10 @@ public class Inventario implements Producto{
          *
 	 * @return precio Una cadena grande que detalla cada uno de los articulos del inventario
 	 */
-	public String informacion(){ //para mostrar al usuario su almacen
+	public String informacion(){ 
 		String productos = "";
 		for(Producto p : listaDeAlimentos){
-			productos += p.informacion()+ "\n";
+			productos += p.informacion();
 		}
 		return productos;
 	}
@@ -62,10 +62,10 @@ public class Inventario implements Producto{
          *
 	 * @return precio Una cadena grande que detalla cada uno de los articulos del inventario
 	 */
-	public String informacionConPrecio(){ //para mostrar el menu
+	public String informacionConPrecio(){ 
 		String productos = "";
 		for(Producto p : listaDeAlimentos){
-			productos += p.informacionConPrecio()+ "\n";
+			productos += p.informacionConPrecio();
 		}
 		return productos;
 	}
@@ -81,14 +81,14 @@ public class Inventario implements Producto{
 	 * Regresa 0 puntos de hambre por defecto 
 	 */
 	public double modificaHambre(){ 
-		return 0; //por defecto
+		return 0; 
 	}
 
 	/**
 	 * Regresa 0 puntos de felicidad por defecto
 	 */
 	public double modificaFelicidad(){
-		return 0; //por defecto
+		return 0; 
 	}
 
 	/**
