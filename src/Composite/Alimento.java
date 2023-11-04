@@ -84,14 +84,14 @@ public class Alimento implements Producto{
 	 * Devuelve uuna cadena con la información y el precio del artículo
 	 */
 	public String informacionConPrecio(){
-		return "Codigo: "+codigo+ " Alimento: " + nombre +"\n"+"Descripcion: " + descripcion+"\n"+ "		Precio: $" +precio + " pejecoins" ;
+		return "CODIGO: "+codigo+ "		Alimento: " + nombre +"\n"+"Descripcion: " + descripcion+"\n"+ "		Precio: $" +precio + " pejecoins" +"\n";
 	}
 	
 	/**
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Codigo: "+codigo+ " Alimento: " + nombre +"\n"+"	Descripcion: " + descripcion;
+		return "CODIGO: "+codigo+ "		Alimento: " + nombre +"\n"+"	Descripcion: " + descripcion + "\n";
 	}
 
 	/**
