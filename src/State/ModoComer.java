@@ -10,15 +10,36 @@ public class ModoComer implements EstadoMascota{
 	private Hogar hogar; 
 	private boolean puedeComer = false;
 	private Scanner sc = new Scanner(System.in);
+	private boolean alimentar = false;
 	
 	public ModoComer(Hogar h){
 		hogar = h;
 	}
 	
-	public void alimentar(){ //aqui se alimenta y se va de compras de ser necesario
-		verificarRefrigerador(); //-> verifica que le refri no este vacio
+	public void alimentar(){ 
+		verificarRefrigerador(); //-> verifica que el refri no este vacio
 		
-		if(puedeComer){ //puedeComer -> true si hay algo en el refri
+		if(puedeComer){
+		System.out.print("Ya tienes provisiones, ¿Quieres alimentar a tu mascota? Escribe si/no : ");
+			
+			while(true){
+				String opcionUsuario = sc.nextLine();
+					if(opcionUsuario.equalsIgnoreCase("si")){ 
+						alimentar=true;
+						break;
+					}else if(opcionUsuario.equalsIgnoreCase("no")){
+						alimentar = false;
+						System.out.println("\n"+"	No hay problema, pero recuerda cuidar bien a tu mascota");
+						hogar.asignarNuevoEstado(hogar.modoSuspender());
+						break;
+					}else{ 
+						System.out.print("		Por favor, elige una opción válida: ");
+					}
+			}
+		}
+		puedeComer=false;
+		
+		if(alimentar){ 
 		boolean seguir =false;
 		Producto alimento=null;
 		int opcion=0;
@@ -47,8 +68,14 @@ public class ModoComer implements EstadoMascota{
 
 				switch(opcion){
 					case 0:
+						if(alimento!=null){
+							System.out.println("\n"+"	Elegiste un alimento, debes darselo a tu mascota antes de terminar");
+							System.out.println("		o tu mascota podria ponerse triste :(");
+							seguir = true;
+						}else{
 						hogar.asignarNuevoEstado(hogar.modoSuspender());
 						seguir=false;
+						}
 					break;
 					case 1:
 						if(alimento!=null){
@@ -61,7 +88,7 @@ public class ModoComer implements EstadoMascota{
 							seguir = false;
 							hogar.asignarNuevoEstado(hogar.modoSuspender());
 						}else {
-							System.out.print("\n Escribe el codigo del alimento: ");
+							System.out.print("\n	--> Escribe el codigo del alimento: ");
 							String codigo = sc.nextLine();
 							alimento = hogar.buscarEnRefrigerador(codigo);
 
@@ -78,7 +105,7 @@ public class ModoComer implements EstadoMascota{
 							seguir =true;
 						}else{
 							try{
-								System.out.println("	Tu mascota esta comiendo "+ alimento.nombre() +" muy alegremente");
+								System.out.println("\n"+"	Tu mascota esta comiendo "+ alimento.nombre() +" muy alegremente :3");
 								hogar.alimentarMascota(alimento);
 								
 								seguir=true;
@@ -118,6 +145,8 @@ public class ModoComer implements EstadoMascota{
 		
 		}//enf if
 		
+		alimentar =false;
+		
 	}
 	
 	
@@ -130,18 +159,15 @@ public class ModoComer implements EstadoMascota{
 			System.out.print("¿Quieres comprar algo en el minisuper? Escribe si/no: ");
 			
 			
-			while(true){
-				
+			while(true){	
 					String opcionUsuario = sc.nextLine();
-					
 					if(opcionUsuario.equalsIgnoreCase("si")){ 
-						
-							hogar.irAlMinisuper(); 
-						//if(hogar.pudoComprar()){ <- quitar cuando se implemente irAlMinisuper
+						hogar.irAlMinisuper(); 
+						if(hogar.pudoComprar()){
 							puedeComer=true;
-						//}else{
-						// hogar.asignarNuevoEstado(hogar.modoSuspender());
-						//}
+						}else{
+						 hogar.asignarNuevoEstado(hogar.modoSuspender());
+						}
 						break;
 					}else if(opcionUsuario.equalsIgnoreCase("no")){
 						System.out.println("\n"+"	No hay problema, pero recuerda cuidar bien a tu mascota");
@@ -151,19 +177,20 @@ public class ModoComer implements EstadoMascota{
 						System.out.print("		Por favor, elige una opción válida: ");
 					}
 			}
-			
 		}else{
 			puedeComer = true;
 		}
+		hogar.pudoComprar(false);
 	}
 	
 	public void jugar(){
 		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
-		
 	}
+	
 	public void dormir(){
 		System.out.println("\n"+"				¿No me ibas a alimentar antes? :(");
 	}
+	
 	public void despertar(){
 		System.out.println("\n"+"				Estoy despierto :/");
 	}
