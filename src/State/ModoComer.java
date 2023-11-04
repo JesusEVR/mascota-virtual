@@ -80,6 +80,8 @@ public class ModoComer implements EstadoMascota{
 					case 1:
 						if(alimento!=null){
 							System.out.println("\n"+"	Ya elegiste un alimento, solo hace falta que se lo des a tu mascota");
+							seguir = true;
+							break;
 						}
 							
 						if(hogar.refrigeradorVacio()){
