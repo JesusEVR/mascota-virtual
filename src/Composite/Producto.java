@@ -12,8 +12,8 @@ package Composite;
 public interface Producto{
 
 	/**
-	* Devuelve el nombre del producto
-	*/
+	 * Devuelve el nombre del producto
+	 */
 	public String nombre();
 
 	/**
