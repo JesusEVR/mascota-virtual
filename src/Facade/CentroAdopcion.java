@@ -157,7 +157,7 @@ public class CentroAdopcion{
 		System.out.println("			0. Salir de la app");
 		System.out.println("			*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 
-		System.out.print("Selecciona la opciOn que deseas ejecutar: ");
+		System.out.print("Selecciona la opcion que deseas ejecutar: ");
 	
 			while(true){
 				try {
