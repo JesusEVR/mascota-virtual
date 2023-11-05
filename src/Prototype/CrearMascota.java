@@ -25,7 +25,6 @@ public class CrearMascota{
 	 */
 	private Hashtable<String , MascotaVirtual> mascotasNivelDificil; 
 
-
 	/**
 	 * Constructor por omisión
 	 */
