@@ -8,7 +8,7 @@ import java.util.Iterator;
 import Facade.CentroAdopcion;
 
 /**
- * Clase principal del juego "Juego".
+ * Clase principal del juego "Eso Brad Pets".
  *
  */
 public class EsoBradPets{
