@@ -5,10 +5,11 @@ import Prototype.MascotaVirtual;
 import Prototype.CrearMascota;
 
 import java.util.Scanner;
+
 public class CentroAdopcion{
 	
 	private MascotaVirtual mascota;
-	private boolean continuar=false;
+	private boolean continuar = false;
 	private Scanner sc = new Scanner(System.in);
 	private String nivel="";
 	private  Hogar hogar;
