@@ -6,20 +6,48 @@ import Prototype.CrearMascota;
 
 import java.util.Scanner;
 
+/**
+ * Clase fundamental de Facade. Divide el proceso principal del juego en 5 pasos / métodos.
+ *
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version noviembre 2023
+ *
+ */
 public class CentroAdopcion{
-	
+	/**
+	 * Mascota virtual vital en el juego.
+	 */
 	private MascotaVirtual mascota;
+	/**
+	 * Booleano auxiliar en los bucles del juego.
+	 */
 	private boolean continuar = false;
+	/**
+	 * Objeto de tipo Scanner que sirve para que el usuario pueda ingresar respuestas.
+	 */
 	private Scanner sc = new Scanner(System.in);
-	private String nivel="";
+	/**
+	 * Cadena auxiliar para cuando se elija el nivel de dificultad del juego.
+	 */
+	private String nivel = "";
+	/**
+	 * Objeto hogar que es pieza clave para diversas funciones de la mascota.
+	 */
 	private  Hogar hogar;
-	
+
+	/**
+	 * Constructor por omision
+	 */
 	public CentroAdopcion(){
-		
 	}
-	
+
+	/**
+	 * Método que saluda al jugador y lo pone en contexto.
+	 */
 	public void darBienvenida(){
-		System.out.println("			¡Bienvenido a (nombre del juego por definir) ");
+		System.out.println("			¡Bienvenido a Eso Brad Pets! ");
 		System.out.println(" ");
 		System.out.println("	En este juego, tu mision es cuidar de la mascota que elijas adoptar.");
 		System.out.println("	Puedes jugar con el, alimentarlo, dormirlo y despertarlo.");
@@ -31,10 +59,13 @@ public class CentroAdopcion{
 		System.out.println("				¿Aceptas la mision? ");
 		System.out.println(" ");
 	}
-	
+
+	/**
+	 * Método que le permite al jugador elegir la dificultad del juego.
+	 */
 	public void elegirNivel(){
 		int opcion=0;
-		System.out.println("		----- N I V E L    D E   J U E G O ------"); 
+		System.out.println("		----- N I V E L    D E   J U E G O -----"); 
 		System.out.println("			1. Facil"); 
 		System.out.println("			2. Dificil");
 		System.out.println("			0. Abandonar mision");
@@ -46,9 +77,9 @@ public class CentroAdopcion{
 					opcion =  Integer.parseInt(opcionUsuario);
 					if(opcion >-1 && opcion < 3){ 
 						break;
-					}else{ System.out.print("		Por favor, elige una opción válida: ");}
+					}else{ System.out.print("		Por favor, elige una opcion valida: ");}
 				}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opción válida: "); }
+					System.out.print("		Por favor, elige una opcion valida: "); }
 			}
 		
 			switch(opcion){
@@ -71,12 +102,15 @@ public class CentroAdopcion{
 		
 	}
 
+	/**
+	 * Método que permite al jugador elegir cuál mascota desea cuidar.
+	 */
 	public void adoptar(){
 		if(continuar){
 			
 		System.out.println(" ");
-		System.out.println("-----------------A D O P C I O N------------------------"); 
-		boolean mascotaExiste=false;
+		System.out.println("----------------- A D O P C I O N ------------------------"); 
+		boolean mascotaExiste = false;
 		CrearMascota creacion = new CrearMascota();
 		creacion.verMascotas();
 		
@@ -92,7 +126,7 @@ public class CentroAdopcion{
 				break;
 			}
 				
-			if(mascota!=null) mascotaExiste=true;
+			if(mascota!=null) mascotaExiste = true;
 					
 		}
 		System.out.println("\n"+ "				Has adoptado a " +mascota.nombre()+ ", te deseamos suerte en tu mision"+"\n");
@@ -100,14 +134,17 @@ public class CentroAdopcion{
 		
 		}
 	}
-	
+
+	/**
+	 * Método que desliega el menú principal con las acciones que el jugador puede hacer con la mascota.
+	 */
 	public void convivir(){
 		if(continuar){
 			
 		hogar = new Hogar(mascota);
-		boolean seguir=false;
-		int opcion=0;
-		System.out.println("********* (Aqui va el nombre del juego) *********");
+		boolean seguir = false;
+		int opcion = 0;
+		System.out.println("********* E S O    B R A D    P E T S *********");
 	
 		do{
 		System.out.println(" "); 
@@ -120,7 +157,7 @@ public class CentroAdopcion{
 		System.out.println("			0. Salir de la app");
 		System.out.println("			*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 
-		System.out.print("Selecciona la opción que deseas ejecutar: ");
+		System.out.print("Selecciona la opciOn que deseas ejecutar: ");
 	
 			while(true){
 				try {
@@ -128,9 +165,9 @@ public class CentroAdopcion{
 					opcion =  Integer.parseInt(opcionUsuario);
 					if(opcion >-1 && opcion < 6){ 
 						break;
-					}else{ System.out.print("		Por favor, elige una opción válida: ");}
+					}else{ System.out.print("		Por favor, elige una opcion valida: ");}
 				}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opción válida: ");
+					System.out.print("		Por favor, elige una opcion valida: ");
 				}
 			}
 			
@@ -174,7 +211,9 @@ public class CentroAdopcion{
 		}
 	}
 	
-	
+	/**
+	 * Método que da un mensaje de despedida al jugador, dependiendo del desenlace de su aventura.
+	 */
 	public void darFelicitacion(){ 
 		if(!continuar){
 			System.out.println(" ");
