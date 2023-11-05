@@ -11,7 +11,7 @@ import Facade.CentroAdopcion;
  * Clase principal del juego "Juego".
  *
  */
-public class Juego{
+public class EsoBradPets{
 	
 	public static void main(String[] args){
 		
