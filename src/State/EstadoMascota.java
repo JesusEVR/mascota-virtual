@@ -1,7 +1,7 @@
 package State;
 
 /**
- * Interfaz con los diversos métodos que cambian los estados de la Mascota Virtual.
+ * Interfaz con los diversos métodos que cambian los estados/modos de la Mascota Virtual.
  *
  * @author Supr-Lilito
  * @author paolasanv
@@ -12,13 +12,24 @@ package State;
 public interface EstadoMascota{
 
 	/**
-	 * Metodo que cambia el estado del Robot a "Suspendido".
-	 * Lo unico que puede hacer en dicho estado es activarse.
+	 * Metodo que cambia el estado de la mascota (Hogar) a "Comer".
 	 *
 	 */
 	public void alimentar();
+	/**
+	 * Metodo que cambia el estado de la mascota (Hogar) a "Jugar".
+	 *
+	 */
 	public void jugar();
+	/**
+	 * Metodo que cambia el estado de la mascota (Hogar) a "Dormir".
+	 *
+	 */
 	public void dormir();
+	/**
+	 * Metodo que cambia el estado de la mascota (Hogar) a "Despertar".
+	 *
+	 */
 	public void despertar();
 
 }
