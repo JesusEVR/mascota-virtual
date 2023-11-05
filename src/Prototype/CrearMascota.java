@@ -17,7 +17,7 @@ public class CrearMascota{
 	 */
 	private BaseDeDatosMascotas baseDatos;	
 	/**
-	 * Hastable correspondinte a la dificultad fácil
+	 * Hastable correspondiente a la dificultad fácil
 	 */
 	private Hashtable<String , MascotaVirtual> mascotasNivelFacil; 
 	/**
