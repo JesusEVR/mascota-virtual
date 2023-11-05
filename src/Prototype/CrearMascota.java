@@ -44,16 +44,16 @@ public class CrearMascota{
 	}
 
 	/**
-	 * Método que
+	 * Método auxiliar que inicializa los atributos de las mascotas copia.
          *
-         * @param nombre
-         * @param puntosHambre
-         * @param puntosEnergia
-         * @param puntosFelicidad
-         * @param saldo
+         * @param nombre El nombre que funge como clave para buscar a una mascota en la Hashtable, y copiar su nombre, descripcion e imagen.
+         * @param puntosHambre Los puntos de hambre que se asiganarán a ls mascota
+         * @param puntosEnergia Los puntos de energía que se asignarán a la mascota
+         * @param puntosFelicidad Los puntos de felicidad que se asiganrán a la mascota
+         * @param saldo La cantidad de monedas que contará el usuario con esta mascota
          *
-         * @return mascota
-	 * @throws NullPointerException Si
+         * @return mascota La mascota virtual 'copia'
+	 * @throws NullPointerException Si no existe una mascota en la Hashtable dada la clave (nombre) proporcionada.
 	 */
 	private MascotaVirtual mascotaAsignarNivel(String nombre, double puntosHambre, double puntosEnergia, double puntosFelicidad, double saldo){
 		MascotaVirtual mascota = baseDatos.obtenerMascota(nombre.toUpperCase());
@@ -66,7 +66,7 @@ public class CrearMascota{
 	}
 	
 	/**
-	 * Método que crea tres mascotas virtuales correspondientes a la
+	 * Método auxiliar que crea tres mascotas virtuales correspondientes a la
          * dificultad fácil, y después las agrega a la Hashtable de la misma.
 	 */
 	private void crearMascotaNivelFacil(){
@@ -94,7 +94,7 @@ public class CrearMascota{
 	}
 
 	/**
-	 * Método que crea tres mascotas virtuales correspondientes a la
+	 * Método auxiliar que crea tres mascotas virtuales correspondientes a la
          * dificultad difícil, y después las agrega a la Hashtable de la misma.
 	 */
 	private void crearMascotaNivelDificil(){
