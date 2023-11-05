@@ -1,14 +1,34 @@
 package Prototype;
 
-
 import java.util.Hashtable;
 
+/**
+ * Clase que define la creación de mascotas virtual, incluyendo de las dos dificultades disponibles
+ * 
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version noviembre 2023
+ *
+ */
 public class CrearMascota{
-	
+	/**
+	 * Hastable con las tres mascotas guardadas
+	 */
 	private BaseDeDatosMascotas baseDatos;	
+	/**
+	 * Hastable correspondinte a la dificultad fácil
+	 */
 	private Hashtable<String , MascotaVirtual> mascotasNivelFacil; 
+	/**
+	 * Hastable correspondiente a la dificultad diícil
+	 */
 	private Hashtable<String , MascotaVirtual> mascotasNivelDificil; 
 
+
+	/**
+	 * Constructor por omisión
+	 */
 	public CrearMascota(){
 		baseDatos = new BaseDeDatosMascotas();
 		mascotasNivelFacil = new Hashtable<>(); 
@@ -16,11 +36,26 @@ public class CrearMascota{
 		crearMascotaNivelFacil();
 		crearMascotaNivelDificil();
 	}
-	
+
+	/**
+	 * Imprime la información de las mascotas virtuales del hashtable
+	 */
 	public void verMascotas(){
 		baseDatos.mascotasDisponibles();
 	}
 
+	/**
+	 * Método que
+         *
+         * @param nombre
+         * @param puntosHambre
+         * @param puntosEnergia
+         * @param puntosFelicidad
+         * @param saldo
+         *
+         * @return mascota
+	 * @throws NullPointerException Si
+	 */
 	private MascotaVirtual mascotaAsignarNivel(String nombre, double puntosHambre, double puntosEnergia, double puntosFelicidad, double saldo){
 		MascotaVirtual mascota = baseDatos.obtenerMascota(nombre.toUpperCase());
 		if(mascota==null) throw new NullPointerException("No existe una mascota con el nombre ingresado"); 
@@ -31,7 +66,11 @@ public class CrearMascota{
 		return mascota;
 	}
 	
-		private void crearMascotaNivelFacil(){
+	/**
+	 * Método que crea tres mascotas virtuales correspondientes a la
+         * dificultad fácil, y después las agrega a la Hashtable de la misma.
+	 */
+	private void crearMascotaNivelFacil(){
 		MascotaVirtual cherk = mascotaAsignarNivel("cherk",120,100,80,40);
 		cherk.mensajeFeliz("La felicidad es como una cebolla, ¡tiene capas! ");
 		cherk.mensajeSuenio("Soy un ogro, no un corderito. ¡Déjame dormir! ");
@@ -54,7 +93,11 @@ public class CrearMascota{
 		mascotasNivelFacil.put(ugandiano.nombre(), ugandiano);
 		mascotasNivelFacil.put(floppa.nombre(), floppa);
 	}
-	
+
+	/**
+	 * Método que crea tres mascotas virtuales correspondientes a la
+         * dificultad difícil, y después las agrega a la Hashtable de la misma.
+	 */
 	private void crearMascotaNivelDificil(){
 		MascotaVirtual cherk = mascotaAsignarNivel("cherk",70,80,80,40);
 		cherk.mensajeFeliz("Hoy es un buen día para disfrutar de la tranquilidad del pantano, amigo. ");
@@ -79,7 +122,13 @@ public class CrearMascota{
 		mascotasNivelDificil.put(floppa.nombre(), floppa);
 	}
 	
-	
+	/**
+	 * Método que busca una mascota virtual dependiendo de la dificultad que haya elegido el usuario.
+         *
+	 * @param nombre El nombre de la mascota virtual que sirve como clave para poder buscarla en la Hashtable.
+         * @param nivelDificultad La dificultad que eligió el jugador.
+	 * @return La mascota que se busca. Devuelve 'null' en caso de no haber encontrado alguna mascota con la clave dada.
+	 */
 	public MascotaVirtual obtenerMascota(String nombre, String nivelDificultad){
 		if(nivelDificultad.toLowerCase().equals("facil")){
 
@@ -95,5 +144,4 @@ public class CrearMascota{
 		
 		return null;
 	}
-	
 }
