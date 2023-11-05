@@ -272,5 +272,10 @@ public class Hogar{
 	public void pudoComprar(boolean p){
 		pudoComprar=p;
 	}
+
+	public void depositar(double monto){
+		mascota.depositar(monto);
+	}
+	
 	
 }
