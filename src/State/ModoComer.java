@@ -5,27 +5,50 @@ import Prototype.MuertePorAburrimientoException;
 import Composite.Producto;
 import Composite.Alimento;
 
+/**
+ * Clase que define el modo comer de la mascota.
+ *
+ */
 public class ModoComer implements EstadoMascota{
-
+	/**
+	 * Objeto de tipo hogar que contiene a la mascota que tendrá diversos estados
+	 */
 	private Hogar hogar; 
+	/**
+	 * Booleano que determina si la mascota puede comer (hay comida en el refrigerador).
+	 */
 	private boolean puedeComer = false;
+	/**
+	 * Objeto de tipo scanner para que el usuario introduzca respuestas.
+	 */
 	private Scanner sc = new Scanner(System.in);
+	/**
+	 * Variable booleana que determina si el usuario desea alimentar a su mascota o no.
+	 */
 	private boolean alimentar = false;
-	
+
+	/**
+	 * Constructor por parámetros.
+         * @param h El objeto hogar que inicializa el atributo de clase.
+	 *
+	 */
 	public ModoComer(Hogar h){
 		hogar = h;
 	}
-	
+
+	/**
+	 * Método que inicia el proceso de alimentación de la mascota virtual.
+	 */
 	public void alimentar(){ 
 		verificarRefrigerador(); //-> verifica que el refri no este vacio
 		
 		if(puedeComer){
-		System.out.print("Ya tienes provisiones, ¿Quieres alimentar a tu mascota? Escribe si/no : ");
+		System.out.print("Ya tienes provisiones, ¿quieres alimentar a tu mascota? Escribe si/no : ");
 			
 			while(true){
 				String opcionUsuario = sc.nextLine();
 					if(opcionUsuario.equalsIgnoreCase("si")){ 
-						alimentar=true;
+						alimentar = true;
 						break;
 					}else if(opcionUsuario.equalsIgnoreCase("no")){
 						alimentar = false;
@@ -33,16 +56,16 @@ public class ModoComer implements EstadoMascota{
 						hogar.asignarNuevoEstado(hogar.modoSuspender());
 						break;
 					}else{ 
-						System.out.print("		Por favor, elige una opción válida: ");
+						System.out.print("		Por favor, elige una opción valida: ");
 					}
 			}
 		}
 		puedeComer=false;
 		
 		if(alimentar){ 
-		boolean seguir =false;
+		boolean seguir = false;
 		Producto alimento=null;
-		int opcion=0;
+		int opcion = 0;
 		System.out.println("\n"+"\n A continuacion se muestran los alimentos que tienes en tu refrigerador:	");
 		hogar.verRefrigerador();
 			do{
@@ -147,12 +170,14 @@ public class ModoComer implements EstadoMascota{
 		
 		}//enf if
 		
-		alimentar =false;
+		alimentar = false;
 		
 	}
 	
 	
-	
+	/**
+	 * Método auxiliar que verifica si el refrigerador tiene comida o no.
+	 */
 	private void verificarRefrigerador(){
 		if(hogar.refrigeradorVacio()){
 			System.out.println("	");
@@ -184,17 +209,25 @@ public class ModoComer implements EstadoMascota{
 		}
 		hogar.pudoComprar(false);
 	}
-	
+
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede jugar en este estado.
+	 */
 	public void jugar(){
 		System.out.println("\n"+hogar.nombreMascota()+":				¿No me ibas a alimentar antes? :(");
 	}
-	
+
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede dormir en este estado.
+	 */
 	public void dormir(){
 		System.out.println("\n"+hogar.nombreMascota()+":				¿No me ibas a alimentar antes? :(");
 	}
-	
+
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede despertar en este estado.
+	 */
 	public void despertar(){
 		System.out.println("\n"+hogar.nombreMascota()+":				Estoy despierto :/");
 	}
-
 }
