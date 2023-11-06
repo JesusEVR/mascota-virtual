@@ -5,20 +5,47 @@ import Prototype.MuertePorNoComerException;
 import Prototype.MuertePorCansancioException;
 import java.util.Scanner;
 
+/**
+ * Clase que define el modo jugar de la mascota.
+ *
+ */
 public class ModoJugar implements EstadoMascota{
-
-	private Hogar hogar; 
+	/**
+	 * Objeto de tipo hogar que contiene a la mascota que tendrá diversos estados
+	 */
+	private Hogar hogar;
+	/**
+	 * Objeto de tipo scanner para que el usuario introduzca respuestas.
+	 */
 	private Scanner sc = new Scanner(System.in);
-	private boolean decidioJugar=false;
-	private double monto=0;
-	
+	/**
+	 * Valor booleano que indica el jugador decicdió jugar a los miniuegos para conseguir Pejecoins.
+	 */
+	private boolean decidioJugar = false;
+	/**
+	 * Cantidad de monedas (Pejecoins) que el usuario gana por jugar un minijuego.
+	 */
+	private double monto = 0;
+
+	/**
+	 * Constructor por parámetros.
+         * @param h El objeto hogar que inicializa el atributo de clase.
+	 *
+	 */
 	public ModoJugar(Hogar h){
 		hogar = h;
 	}
 	
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede comer en este estado.
+	 */
 	public void alimentar(){
 		System.out.println("\n"+ hogar.nombreMascota()+ ":				¿No ibamos a jugar primero?");
 	}
+
+	/**
+	 * Método que despliega el menú de minijuegos y todo lo que conllevan.
+	 */
 	public void jugar(){ 
 		jugarMinijuegos();
 		if(decidioJugar){
@@ -26,7 +53,7 @@ public class ModoJugar implements EstadoMascota{
 				hogar.jugarConMascota(-15,-20,10);
 				hogar.depositar(monto);
 				System.out.println("");
-				System.out.println("	¡Que bien! ¡Tu mascota está feliz de jugar contigo! :D");
+				System.out.println("	¡Que bien! ¡Tu mascota esta feliz de jugar contigo! :D");
 				hogar.asignarNuevoEstado(hogar.modoSuspender());
 			}catch(MuertePorNoComerException e){
 				System.out.println(" ");
@@ -54,19 +81,30 @@ public class ModoJugar implements EstadoMascota{
 			hogar.asignarNuevoEstado(hogar.modoSuspender());
 		}
 	}
+	
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede dormir en este estado.
+	 */
 	public void dormir(){
 		System.out.println("\n"+hogar.nombreMascota()+":				¿No ibamos a jugar primero?");
 		
 	}
+
+	/**
+	 * Imprime una mensaje donde se dice de forma implicita que la mascota no puede despertar en este estado.
+	 */
 	public void despertar(){
 		System.out.println("\n"+hogar.nombreMascota()+":				Estoy despierto :/");
 		
 	}
-	
+
+	/**
+	 * Método auxiliar que
+	 */
 	private void jugarMinijuegos(){//Aqui va el sistema de minijuegos
 		int opcion=0;
 		System.out.println("");
-		System.out.println("			----------------MINIJUEGOS--------------");
+		System.out.println("			--------------- MINIJUEGOS -------------");
 		System.out.println("");
 		System.out.println("			1. Tortuga Mecanica");
 		System.out.println("			2. Apuestas");
@@ -81,9 +119,9 @@ public class ModoJugar implements EstadoMascota{
 				opcion =  Integer.parseInt(opcionUsuario);
 				if(opcion >-1 && opcion < 3){ 
 				break;
-				}else{ System.out.print("		Por favor, elige una opción válida: ");}
+				}else{ System.out.print("		Por favor, elige una opcion valida: ");}
 			}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opción válida: "); }
+					System.out.print("		Por favor, elige una opcion valida: "); }
 		}
 		
 		switch(opcion){
