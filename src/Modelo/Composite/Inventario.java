@@ -1,4 +1,4 @@
-package Composite;
+package Modelo.Composite;
 
 import java.util.LinkedList;
 import java.util.Stack;

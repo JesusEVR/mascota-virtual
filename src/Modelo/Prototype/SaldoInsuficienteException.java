@@ -1,4 +1,4 @@
-package Prototype;
+package Modelo.Prototype;
 
 /**
  * Clase que lanza una excepcion cuando el saldo de la cuenta es insuficiente.

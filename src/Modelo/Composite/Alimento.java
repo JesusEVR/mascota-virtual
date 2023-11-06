@@ -1,4 +1,4 @@
-package Composite;
+package Modelo.Composite;
 
 /**
  * Clase que define las caracteristicas de un alimento

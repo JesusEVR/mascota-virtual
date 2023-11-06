@@ -1,4 +1,4 @@
-package Prototype;
+package Modelo.Prototype;
 
 /**
  * Clase que crea una excepcion para la muerte de una mascota causada por jugar demasiado y no darle alimento

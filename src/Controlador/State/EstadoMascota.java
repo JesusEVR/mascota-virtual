@@ -1,4 +1,4 @@
-package State;
+package Controlador.State;
 
 /**
  * Interfaz con los diversos métodos que cambian los estados/modos de la Mascota Virtual.

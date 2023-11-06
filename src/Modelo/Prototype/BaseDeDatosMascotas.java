@@ -1,4 +1,4 @@
-package Prototype;
+package Modelo.Prototype;
 
 import java.util.Hashtable;
 

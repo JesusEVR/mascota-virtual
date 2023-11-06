@@ -1,4 +1,4 @@
-package Composite;
+package Modelo.Composite;
 
 /**
  * Interfaz que define los metodos de un producto de la tienda

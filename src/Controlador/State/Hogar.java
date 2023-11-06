@@ -1,20 +1,21 @@
-package State;
+package Controlador.State;
 
 import java.util.Scanner;
-import Iterator.Catalogo;
-import Iterator.CatalogoAlimento;
-import Iterator.IteradorLista;
 import java.util.Iterator;
-import Composite.Alimento;
-import Composite.Inventario;
-import Composite.Producto;
-import Composite.Alimento;
-import Prototype.MascotaVirtual;
-import Prototype.MuertePorAburrimientoException;
-import Prototype.MuertePorCansancioException;
-import Prototype.MuertePorIntoxicacionException;
-import Prototype.SaldoInsuficienteException;
-import Prototype.MuertePorNoComerException;	
+
+import Modelo.Iterator.Catalogo;
+import Modelo.Iterator.CatalogoAlimento;
+import Modelo.Iterator.IteradorLista;
+import Modelo.Composite.Alimento;
+import Modelo.Composite.Inventario;
+import Modelo.Composite.Producto;
+import Modelo.Composite.Alimento;
+import Modelo.Prototype.MascotaVirtual;
+import Modelo.Prototype.MuertePorAburrimientoException;
+import Modelo.Prototype.MuertePorCansancioException;
+import Modelo.Prototype.MuertePorIntoxicacionException;
+import Modelo.Prototype.SaldoInsuficienteException;
+import Modelo.Prototype.MuertePorNoComerException;	
 
 public class Hogar{
 	

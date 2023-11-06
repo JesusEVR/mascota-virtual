@@ -1,6 +1,6 @@
-package Prototype;
+package Modelo.Prototype;
 
-import Composite.Producto;
+import Modelo.Composite.Producto;
 
 /**
  * Clase que define las caracteristicas principales de una Mascota Virtual

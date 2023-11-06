@@ -1,7 +1,7 @@
-package Iterator;
+package Modelo.Iterator;
 
-import Composite.Producto;
-import Composite.Alimento;
+import Modelo.Composite.Producto;
+import Modelo.Composite.Alimento;
 
 import java.util.LinkedList;
 import java.util.Iterator;

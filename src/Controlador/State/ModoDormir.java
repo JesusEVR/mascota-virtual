@@ -1,4 +1,4 @@
-package State;
+package Controlador.State;
 
 /**
  * Clase que define el modo dormir de la mascota.

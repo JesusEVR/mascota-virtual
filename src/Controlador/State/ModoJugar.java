@@ -1,8 +1,8 @@
-package State;
+package Controlador.State;
 
 import Minijuegos.Tablero;
-import Prototype.MuertePorNoComerException;
-import Prototype.MuertePorCansancioException;
+import Modelo.Prototype.MuertePorNoComerException;
+import Modelo.Prototype.MuertePorCansancioException;
 import java.util.Scanner;
 
 /**

@@ -1,4 +1,4 @@
-package State;
+package Controlador.State;
 
 /**
  * Clase que define el modo morir de la mascota.

@@ -1,11 +1,4 @@
-import Composite.Producto;
-import Composite.Alimento;
-import Composite.Inventario;
-import Iterator.Catalogo;
-import Iterator.CatalogoAlimento;
-import Iterator.IteradorLista;
-import java.util.Iterator;
-import Facade.CentroAdopcion;
+import Vista.Facade.CentroAdopcion;
 
 /**
  * Clase principal del juego "Eso Brad Pets".

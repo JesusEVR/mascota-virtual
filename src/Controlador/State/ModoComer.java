@@ -1,9 +1,11 @@
-package State;
+package Controlador.State;
+
 import java.util.Scanner;
-import Prototype.MuertePorIntoxicacionException;
-import Prototype.MuertePorAburrimientoException;
-import Composite.Producto;
-import Composite.Alimento;
+
+import Modelo.Prototype.MuertePorIntoxicacionException;
+import Modelo.Prototype.MuertePorAburrimientoException;
+import Modelo.Composite.Producto;
+import Modelo.Composite.Alimento;
 
 /**
  * Clase que define el modo comer de la mascota.

@@ -1,8 +1,8 @@
-package Facade;
+package Vista.Facade;
 
-import State.Hogar;
-import Prototype.MascotaVirtual;
-import Prototype.CrearMascota;
+import Controlador.State.Hogar;
+import Modelo.Prototype.MascotaVirtual;
+import Modelo.Prototype.CrearMascota;
 
 import java.util.Scanner;
 
