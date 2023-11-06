@@ -44,7 +44,7 @@ public class ModoJugar implements EstadoMascota{
 	}
 
 	/**
-	 * Método que despliega el menú de minijuegos y todo lo que conllevan.
+	 * Método que despliega el proceso de los minijuegos, incluyendo los casos donde se intente farmear monedas.
 	 */
 	public void jugar(){ 
 		jugarMinijuegos();
@@ -99,7 +99,7 @@ public class ModoJugar implements EstadoMascota{
 	}
 
 	/**
-	 * Método auxiliar que
+	 * Método auxiliar que despliega el menú de minijuegos.
 	 */
 	private void jugarMinijuegos(){//Aqui va el sistema de minijuegos
 		int opcion=0;
