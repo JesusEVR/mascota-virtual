@@ -26,6 +26,18 @@ public class ModoJugar implements EstadoMascota{
 	 * Cantidad de monedas (Pejecoins) que el usuario gana por jugar un minijuego.
 	 */
 	private double monto = 0;
+	/**
+	* Numero random entre 10 y 20
+	*/
+	private int valorHambre =(int) (Math.random() * ((20 - 10) +1)) + 10;
+	/**
+	* Numero random entre 10 y 20
+	*/
+	private int valorEnergia =(int) (Math.random() * ((20 - 10) +1)) + 10;
+	/**
+	* Numero random entre 5 y 15
+	*/
+	private int valorFelicidad =(int) (Math.random() * ((15 - 5) +1)) + 5;
 
 	/**
 	 * Constructor por parámetros.
@@ -50,7 +62,7 @@ public class ModoJugar implements EstadoMascota{
 		jugarMinijuegos();
 		if(decidioJugar){
 			try{
-				hogar.jugarConMascota(-15,-20,10);
+				hogar.jugarConMascota((double) -valorHambre, (double) -valorEnergia,(double) valorFelicidad);
 				hogar.depositar(monto);
 				System.out.println("");
 				System.out.println("	¡Que bien! ¡Tu mascota esta feliz de jugar contigo! :D");

@@ -11,6 +11,10 @@ public class ModoSuspender implements EstadoMascota{
 	 * Objeto de tipo hogar que contiene a la mascota que tendrá diversos estados
 	 */
 	private Hogar hogar; 
+	/**
+	* Numero random entre 15 y 30 
+	*/
+	private int valorDormir =(int) (Math.random() * ((30 - 15) +1)) + 15;
 
 	/**
 	 * Constructor por parámetros.
@@ -52,7 +56,7 @@ public class ModoSuspender implements EstadoMascota{
 		hogar.estaDormido(true);
 		
 		try{
-			hogar.dormirMascota(10);
+			hogar.dormirMascota((double) valorDormir);
 		}catch(MuertePorAburrimientoException ex){
 			System.out.println(" ");
 			System.out.println("			_-_-_-_-_-_-_-_-_-_-_ W A R N I N G _-_-_-_-_-_-_-_-_-_");

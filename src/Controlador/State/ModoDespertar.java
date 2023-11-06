@@ -11,6 +11,10 @@ public class ModoDespertar implements EstadoMascota{
 	 * Objeto de tipo hogar que contiene a la mascota que tendrá diversos estados
 	 */
 	private Hogar hogar; 
+	/**
+	* Numero random entre 15 y 30 
+	*/
+	private int valorDormir =(int) (Math.random() * ((30 - 15) +1)) + 15;
 
 	/**
 	 * Constructor por parámetros.
@@ -51,7 +55,7 @@ public class ModoDespertar implements EstadoMascota{
 		System.out.println("\n"+hogar.nombreMascota()+"				Supongo que no dormi suficiente, toca dormir nuevamente");
 		hogar.asignarNuevoEstado(hogar.modoDormir());
 		try{
-			hogar.dormirMascota(10);
+			hogar.dormirMascota((double) valorDormir);
 			
 		}catch(MuertePorAburrimientoException ex){
 			System.out.println(" ");
