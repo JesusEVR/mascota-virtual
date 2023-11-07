@@ -1,10 +1,9 @@
-package Iterator;
-
-import Minijuegos.Caso;
-import Minijuegos.ConstructorEventos;
+package Minijuegos;
 
 import java.util.LinkedList;
 import java.util.Iterator;
+import Modelo.Iterator.Catalogo;
+import Modelo.Iterator.IteradorLista;
 
 public class ListaJuegos implements Catalogo{
     

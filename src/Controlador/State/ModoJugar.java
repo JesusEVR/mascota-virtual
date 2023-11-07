@@ -1,7 +1,6 @@
 package Controlador.State;
 
 import Minijuegos.*;
-import Modelo.Iterator.ListaJuegos;
 import Modelo.Prototype.MuertePorNoComerException;
 import Modelo.Prototype.MuertePorCansancioException;
 
@@ -208,6 +207,7 @@ public class ModoJugar implements EstadoMascota{
 
 	public int elegirOpcion(int valorMin, int valorMax){
 		int opcionElegida = 0;
+		int opcion=0;
 		while(true){
 			try {
 				String opcionUsuario = sc.nextLine();
