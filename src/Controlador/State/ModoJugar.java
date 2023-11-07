@@ -1,8 +1,11 @@
 package Controlador.State;
 
-import Minijuegos.Tablero;
+import Minijuegos.*;
+import Modelo.Iterator.ListaJuegos;
 import Modelo.Prototype.MuertePorNoComerException;
 import Modelo.Prototype.MuertePorCansancioException;
+
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -38,6 +41,8 @@ public class ModoJugar implements EstadoMascota{
 	* Numero random entre 5 y 15
 	*/
 	private int valorFelicidad =(int) (Math.random() * ((15 - 5) +1)) + 5;
+
+	private ListaJuegos listaEventos;
 
 	/**
 	 * Constructor por parámetros.
@@ -119,12 +124,12 @@ public class ModoJugar implements EstadoMascota{
 		System.out.println("			--------------- MINIJUEGOS -------------");
 		System.out.println("");
 		System.out.println("			1. Tortuga Mecanica");
-		System.out.println("			2. Apuestas");
+		System.out.println("			2. Eventos");
 		System.out.println("			0.Salir");
 		System.out.println("			----------------------------------------");
 		System.out.println("");
 		System.out.print("Elige una opcion: ");
-		
+		/* 
 		while(true){
 			try {
 				String opcionUsuario = sc.nextLine();
@@ -135,8 +140,9 @@ public class ModoJugar implements EstadoMascota{
 			}catch (NumberFormatException ex){
 					System.out.print("		Por favor, elige una opcion valida: "); }
 		}
+		*/
 		
-		switch(opcion){
+		switch(elegirOpcion(0, 2)){
 			case 0:
 				decidioJugar = false;
 				break;
@@ -147,12 +153,72 @@ public class ModoJugar implements EstadoMascota{
 				monto = t.monedas();
 				break;
 			case 2:
-				System.out.println("	Opcion por el momento inhabilitada");
+				
+				System.out.println("			--------------- EVENTOS -------------");
+				System.out.println();
+				System.out.println("			1. Fácil");
+				System.out.println("			2. Medio");
+				System.out.println("			3. Difícil");
+				System.out.println("			4. EXTREMO");
+				System.out.println("			0. Salir");
+				System.out.println();
+				System.out.print("Elige una opcion: ");
+				/* 
+				while(true){
+					try {
+						String opcionUsuario2 = sc.nextLine();
+						opcion2 =  Integer.parseInt(opcionUsuario);
+						if(opcion2 >-1 && opcion2 < 5){ 
+						break;
+						}else{ System.out.print("		Por favor, elige una opcion valida: ");}
+					}catch (NumberFormatException ex){
+							System.out.print("		Por favor, elige una opcion valida: "); }
+				}
+				*/
+
+				switch(elegirOpcion(0, 4)){
+					case 0:
+					decidioJugar = false;
+					break;
+					case 1:
+					verEventos(1);
+				}
+
 				decidioJugar = true;
 				monto = 4; //temporal
 				break;
 		}
 		
+	}
+
+	public void verEventos(int dificultad){
+		listaEventos = new ListaJuegos();
+		ConstructorEventos con;
+		Iterator<E> i = listaEventos.creaIterador();
+		while(i.hasNext()){
+			con = (ConstructorEventos) i.next();
+			if(con.obtenerDificultad() == dificultad){
+				System.out.print(con.obtenerCodigo() + " ");
+				System.out.println(con.obtenerTitulo());
+				System.out.println("	" + con.obtenerDescripcion());
+				System.out.println();
+			}
+		}
+	}
+
+	public int elegirOpcion(int valorMin, int valorMax){
+		int opcionElegida = 0;
+		while(true){
+			try {
+				String opcionUsuario = sc.nextLine();
+				opcion =  Integer.parseInt(opcionUsuario);
+				if(opcion >- valorMin-1 && opcion < valorMax+1){ 
+				break;
+				}else{ System.out.print("		Por favor, elige una opcion valida: ");}
+			}catch (NumberFormatException ex){
+					System.out.print("		Por favor, elige una opcion valida: "); }
+		}
+		return opcionElegida;
 	}
 
 
