@@ -34,7 +34,7 @@ public class Hogar{
 	 */
 	private MascotaVirtual mascota;
 	/**
-	 * Estado actual del hogar (y de la mascota)
+	 * Estado actual de la mascota
 	 */
 	private EstadoMascota estadoActual;
 	/**
@@ -42,38 +42,55 @@ public class Hogar{
 	 */
 	private EstadoMascota modoSuspendido;
 	/**
-	 * Modo suspendido de la mascota
+	 * Modo comer de la mascota
 	 */
 	private EstadoMascota modoComer;
 	/**
-	 * Modo suspendido de la mascota
+	 * Modo jugar de la mascota
 	 */
 	private EstadoMascota modoJugar;
 	/**
-	 * Modo suspendido de la mascota
+	 * Modo dormir de la mascota
 	 */
 	private EstadoMascota modoDormir;
 	/**
-	 * Modo suspendido de la mascota
+	 * Modo despertar de la mascota
 	 */
 	private EstadoMascota modoDespertar;
 	/**
-	 * Modo suspendido de la mascota
+	 * Modo morir de la mascota
 	 */
 	private EstadoMascota modoMorir;
-	
+	/**
+	 * Booleano que determina si la mascota está dormida.
+	 */
 	private boolean estaDormido = false;
-	
-	private boolean estaVivo=true;
-	
+	/**
+	 * Booleano que determina si la mascota está viva.
+	 */
+	private boolean estaVivo = true;
+	/**
+	 * Catalogo de productos del supermercado.
+	 */
 	private Catalogo catalogo;
-	
+	/**
+	 * Refrigerador donde se guardan los alimentos para la mascota.
+	 */
 	private Inventario refrigerador;
-	
-	private boolean pudoComprar=false;
-	
+	/**
+	 *
+	 */
+	private boolean pudoComprar = false;
+	/**
+	 * Contador de los días que la mascota ha estado viva.
+	 */
 	private int diasVivo = 1;
-	
+
+	/**
+	 * Constructor por parámetros.
+         * 
+	 * @param mascota La mascota virtual dentro del hogar del jugador.
+	 */
 	public Hogar(MascotaVirtual mascota){
 		this.mascota = mascota;
 		catalogo = new CatalogoAlimento();
@@ -86,92 +103,208 @@ public class Hogar{
 		modoMorir = new ModoMorir(this);
 		estadoActual  = modoSuspendido;
 	}
-	
+
+	/**
+	 * Método que agrega un día más al contador de sobrevivencia de la mascota.
+	 */
 	public void unDiaMasVivo(){
 		diasVivo++;
 	}
-	
+
+	/**
+	 * Devuelve la cantidad de días que la mascota ha estado viva.
+         *
+	 * @return diasVivo
+	 */
 	public int diasVivo(){
 		return diasVivo;
 	}
-	
+
+	/**
+	 * Devuelve el nombre de la mascota.
+         *
+	 * @return Nombre de la mascota
+	 */
 	public String nombreMascota(){
 		return mascota.nombre();
 	}
-	
+
+	/**
+	 * Devuelve la información de la mascota.
+         *
+	 * @return Los atributos de la mascota en forma de cadena.
+	 */
 	public void infoMascota(){
 		mascota.informacion();
 	}
-	
+
+	/**
+	 * Cambia el estado de la mascota virtual (Hogar).
+         *
+	 * @param modo El modo que se desse asignar a la mascota
+	 */
 	public void asignarNuevoEstado(EstadoMascota modo){
 		estadoActual = modo;
 	}
-	
+
+	/**
+	 * Realiza el proceso de alimentación de la mascota virtual, según su estado actual.
+	 */
 	public void alimentar(){
 		estadoActual.alimentar();
 	}
+
+	/**
+	 * Realiza el proceso que conlleva jugar con la mascota virtual, según su estado actual.
+	 */
 	public void jugar(){
 		estadoActual.jugar();
 	}
+
+	/**
+	 * Realiza el proceso que conlleva dormir a la mascota virtual, según su estado actual.
+	 */
 	public void dormir(){
 		estadoActual.dormir();
 	}
+
+	/**
+	 * Realiza el proceso de despertar a la mascota virtual, según su estado actual.
+	 */
 	public void despertar(){
 		estadoActual.despertar();
 	}
-	
+
+	/**
+	 * Regresa el atributo modo Suspendido.
+         * 
+	 * @return modoSuspendido
+	 */
 	public EstadoMascota modoSuspender(){
 		return modoSuspendido;
 	}
 
+	/**
+	 * Regresa el atributo modo Morir.
+         * 
+	 * @return modoMorir
+	 */
 	public EstadoMascota modoMorir(){
 		return modoMorir;
 	}
-	
+
+	/**
+	 * Regresa el atributo modo Comer.
+         * 
+	 * @return modoComer
+	 */
 	public EstadoMascota modoComer(){
 		return modoComer;
 	}
-	
+
+	/**
+	 * Regresa el atributo modo Jugar.
+         * 
+	 * @return modoJugar
+	 */
 	public EstadoMascota modoJugar(){
 		return modoJugar;
 	}
-	
+
+	/**
+	 * Regresa el atributo modo Dormir.
+         * 
+	 * @return modoDormir
+	 */
 	public EstadoMascota modoDormir(){
 		return modoDormir;
 	}
+
+	/**
+	 * Regresa el atributo modo Despertar.
+         * 
+	 * @return modoDespertar
+	 */
 	public EstadoMascota modoDespertar(){
 		return modoDespertar;
 	}
-	
+
+	/**
+	 * Asigna un valor booleano al atributo estaDormido (setter)
+         * 
+	 * @return dormir La nueva variable que determina si la mascota duerme o no.
+	 */
 	public void estaDormido(boolean dormir){
 		estaDormido = dormir;
 	}
-	
+
+	/**
+	 * Regresa el atributo estaDormido.
+         * 
+	 * @return estaDormido
+	 */
 	public boolean estaDormido(){
 		return estaDormido;
 	}
-	
+
+	/**
+	 * Asigna un valor booleano al atributo estaVivo (setter).
+         * 
+	 * @return estado La nueva variable que determina esta viva o no.
+	 */
 	public void estaVivo(boolean estado){
 		estaVivo = estado;
 	}
-	
+
+	/**
+	 * Regresa el atributo estaVivo.
+         * 
+	 * @return estaVivo
+	 */
 	public boolean estaVivo(){
 		return estaVivo;
 	}
 	
-	
-	public void jugarConMascota(double hambre, double energia, double felicidad)throws MuertePorNoComerException, MuertePorCansancioException{
+	/**
+	 * Método que modifica los puntos de hambre, energía y felicidad de la mascota cuando se juega con ella. 
+         * Solo manda a llamar el método 'jugar' de la clase MascotaVirtual.
+	 *
+	 * @param hambre La cantidad de puntos de hambre a sumar (o restar) cuando la mascota juega.
+         * @param energia La cantidad de puntos de energia a sumar (o restar) cuando la mascota juega.
+         * @param felicidad La cantidad de puntos de felicidad a sumar (o restar) cuando la mascota  juega.
+         * @throws MuertePorNoComerException Si la mascota juega demasiado sin detenerse a comer y sus puntos de hambre son menores o iguales a cero.
+	 * @throws MuertePorCansancioException Si la mascota juega demasiado y sus puntos de energia son menores o iguales a cero.
+	 */
+	public void jugarConMascota(double hambre, double energia, double felicidad) throws MuertePorNoComerException, MuertePorCansancioException{
 		mascota.jugar(hambre, energia, felicidad);
 	}
-	
+
+	/**
+	 * Método que modifica los puntos de energía y felicidad de la mascota cuando duerme.
+         * Solo manda a llmar al método 'dormir' de la clase MascotaVirtual.
+	 *
+	 * @param felicidad La cantidad de puntos de felicidad a restar cuando se duerme la mascota.
+         * @throws MuertePorAburrimientoException Si la mascota duerme demasiado y sus puntos de felicidad son menores o iguales a cero.
+	 */
 	public void dormirMascota(double felicidad) throws MuertePorAburrimientoException{
 		mascota.dormir(felicidad);
 	}
 	
+	/**
+	 * Método que modifica los puntos de hambre y felicidad de la mascota cuando es alimentada.
+         * Solo manda a llamar al método 'comer' d ela clase MascotaVirtual.
+	 *
+	 * @param p El producto con el que se alimentará a la mascota virtual
+         * @throws MuertePorIntoxicacionException Si los puntos de hambre de la mascota son iguales o menores a cero debido a lo que comió.
+         * @throws MuertePorAburrimientoException Si los puntos de felicidad de la mascota son iguales o menores a cero debido a lo que comió.
+	 */
 	public void alimentarMascota(Producto p)throws MuertePorIntoxicacionException, MuertePorAburrimientoException{
 		mascota.comer(p);
 	}
-	
+
+	/**
+	 * Imprime la información con precio del catálogo de productos en el supermercado.
+	 */
 	public void verCatalogo(){
 		Producto p;
 		Iterator i = catalogo.creaIterador();
@@ -183,13 +316,19 @@ public class Hogar{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 	}
 	
-	
+	/**
+	 * Determina si el refrigerador no tiene productos dentro.
+         * 
+	 * @return 'true' si el refrigerador está vacío, 'false' en otro caso.
+	 */
 	public boolean refrigeradorVacio(){
 		refrigerador.eliminarSubinventarios();
 		return !refrigerador.tieneProductos();
 	}
 	
-	
+	/**
+	 * Imprime la información de los productos que estén dentro del refigerador del jugador.
+	 */
 	public void verRefrigerador(){
 		System.out.println("		_-_-_-_-_ R E F R I G E R A D O R _-_-_-_-_");
 		if(refrigeradorVacio()){
@@ -199,12 +338,24 @@ public class Hogar{
 		}
 		System.out.println("		_-_-_-_-_-_-_-_-_-_-__-__-_-_-_-_-_-_-_-_-_");
 	}
-	
+
+	/**
+	 * Busca un producto en el refrigerador del jugador.
+         * 
+	 * @param codigo El código único del producto a buscar.
+	 * @return p El producto requerido.
+	 */
 	public Producto buscarEnRefrigerador(String codigo){ 
 		Producto p = refrigerador.encontrarProducto(codigo);
 		return p;
 	}
-	
+
+	/**
+	 * Busca un producto en el catálogo de la tienda.
+         * 
+	 * @param codigo El código único del producto a buscar.
+	 * @return p El producto requerido.
+	 */
 	public Producto buscarEnCatalogo(String codigo){ //Busca el alimento en el catalogo
 		Producto p;
 		Iterator i = catalogo.creaIterador();
@@ -215,6 +366,12 @@ public class Hogar{
 		return null;
 	}
 
+	/**
+	 * Despliega un menú del minisuper,
+         * 
+	 * @param codigo El código único del producto a buscar.
+	 * @return p El producto requerido.
+	 */
 	public void irAlMinisuper(){ //Operaciones para comprar alimentos, verifica que el dinero le alcance
 		Scanner sc = new Scanner(System.in);
 		Inventario carritoVirtual = new Inventario();
@@ -297,7 +454,7 @@ public class Hogar{
 			}catch(SaldoInsuficienteException ex){
 				System.out.println("\n"+"		_-_-_-_-_-_-_ SALDO INSUFICIENTE _-_-_-_-_-_-_");
 				System.out.println("				¡Tu saldo es insuficiente!");
-				System.out.println("	Pudes jugar para ganar mas pejecoins o intentar comprar nuevamente algo que te alcance");
+				System.out.println("	Pudes jugar para ganar mas pejecoins o intentar nuevamente comprar algo (para lo que te alcance)");
 				System.out.println("		_-_-_-_-_-_-__-_-_-_-_-_-__-_-_-_-_-_-_"+"\n");
 				pudoComprar(false);
 			}
