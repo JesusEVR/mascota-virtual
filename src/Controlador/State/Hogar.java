@@ -78,7 +78,7 @@ public class Hogar{
 	 */
 	private Inventario refrigerador;
 	/**
-	 *
+	 * Booleano que indica si el jugador pudo comprar algo en el minispuer.
 	 */
 	private boolean pudoComprar = false;
 	/**
@@ -367,7 +367,7 @@ public class Hogar{
 	}
 
 	/**
-	 * Despliega un menú del minisuper,
+	 * Despliega un menú del minisuper, además comprueba que el usuario tenga suficiente dinero para realizar la compra.
          * 
 	 * @param codigo El código único del producto a buscar.
 	 * @return p El producto requerido.
@@ -377,7 +377,7 @@ public class Hogar{
 		Inventario carritoVirtual = new Inventario();
 		int opcion = 0;
 		boolean seguir = false;
-		boolean puedePagar=false;
+		boolean puedePagar = false;
 		Producto producto;
 		System.out.println("	");
 		System.out.println("	");
@@ -461,15 +461,30 @@ public class Hogar{
 		}
 		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-**-*-*-*-*-*-*-*-*-**-*-*-*-*-*");
 	}
-	
+
+	/**
+	 * Regresa el atributo pudoComprar.
+         * 
+	 * @return pudoComprar.
+	 */
 	public boolean pudoComprar(){
 		return pudoComprar;
 	}
-	
+
+	/**
+	 * Asigna un nuevo valor booleano al atributo pudoComprar.
+         * 
+	 * @param p El nuevo booleano que indica si el jugador pudo comprar algo.
+	 */
 	public void pudoComprar(boolean p){
-		pudoComprar=p;
+		pudoComprar = p;
 	}
-	
+
+	/**
+	 * Agrega dinero al saldo del jugador. Manda a llamar el método 'depositar' de la clase MascotaVirtual.
+         * 
+	 * @param monto La cantidad a depositar en el saldo.
+	 */
 	public void depositar(double monto){
 		mascota.depositar(monto);
 	}
