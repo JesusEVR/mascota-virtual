@@ -17,23 +17,62 @@ import Modelo.Prototype.MuertePorIntoxicacionException;
 import Modelo.Prototype.SaldoInsuficienteException;
 import Modelo.Prototype.MuertePorNoComerException;	
 
+/**
+ * Clase que define al objeto Hogar. Esta clase pretende 'dividir' 
+ * las características de la Mascota Virtual, y además hacerse cargo 
+ * del proceso de compra alimentos y almacenamiento de estos.
+ *
+ * @author Supr-Lilito
+ * @author paolasanv
+ * @author JesusEVR
+ * @version noviembre 2023
+ *
+ */
 public class Hogar{
-	
-	
+	/**
+	 * Mascota virtual que el objeto Hogar necesita para realizar sus procesos generales.
+	 */
 	private MascotaVirtual mascota;
+	/**
+	 * Estado actual del hogar (y de la mascota)
+	 */
 	private EstadoMascota estadoActual;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoSuspendido;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoComer;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoJugar;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoDormir;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoDespertar;
+	/**
+	 * Modo suspendido de la mascota
+	 */
 	private EstadoMascota modoMorir;
+	
 	private boolean estaDormido = false;
+	
 	private boolean estaVivo=true;
+	
 	private Catalogo catalogo;
+	
 	private Inventario refrigerador;
+	
 	private boolean pudoComprar=false;
-	private int diasVivo=1;
+	
+	private int diasVivo = 1;
 	
 	public Hogar(MascotaVirtual mascota){
 		this.mascota = mascota;
@@ -136,7 +175,7 @@ public class Hogar{
 	public void verCatalogo(){
 		Producto p;
 		Iterator i = catalogo.creaIterador();
-		System.out.println(">>>>>>>>> C A T A LO G O   D E    A L I M E N T O S <<<<<<<<");
+		System.out.println(">>>>>>>>> C A T A L O G O   D E   A L I M E N T O S <<<<<<<<");
 		while(i.hasNext()){
 			p = (Producto) i.next();
 			System.out.println(p.informacionConPrecio());
@@ -152,13 +191,13 @@ public class Hogar{
 	
 	
 	public void verRefrigerador(){
-		System.out.println("		_-_-_-_-_ R E F R I GE R A D O R _-_-_-_-_");
+		System.out.println("		_-_-_-_-_ R E F R I G E R A D O R _-_-_-_-_");
 		if(refrigeradorVacio()){
 			System.out.println("			Este refrigerador esta vacio o.O");
 		}else {
 			System.out.println(refrigerador.informacion());
 		}
-		System.out.println("		_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+		System.out.println("		_-_-_-_-_-_-_-_-_-_-__-__-_-_-_-_-_-_-_-_-_");
 	}
 	
 	public Producto buscarEnRefrigerador(String codigo){ 
@@ -248,7 +287,7 @@ public class Hogar{
 			System.out.println(carritoVirtual.informacionConPrecio());
 			System.out.println("				Total:	$" +total+" pejecoins " );
 			System.out.println("________________________________________________________");
-			System.out.println("\n"+"			Procederemos con la transaccion....");
+			System.out.println("\n"+"			Procederemos con la transaccion...");
 			System.out.println("");
 			try{
 				mascota.comprar(total);
@@ -256,7 +295,7 @@ public class Hogar{
 				refrigerador.agregarProducto(carritoVirtual);
 				pudoComprar(true);
 			}catch(SaldoInsuficienteException ex){
-				System.out.println("\n"+"		_-_-_-_-_-_-_SALDO INSUFICIENTE _-_-_-_-_-_-_");
+				System.out.println("\n"+"		_-_-_-_-_-_-_ SALDO INSUFICIENTE _-_-_-_-_-_-_");
 				System.out.println("				¡Tu saldo es insuficiente!");
 				System.out.println("	Pudes jugar para ganar mas pejecoins o intentar comprar nuevamente algo que te alcance");
 				System.out.println("		_-_-_-_-_-_-__-_-_-_-_-_-__-_-_-_-_-_-_"+"\n");
