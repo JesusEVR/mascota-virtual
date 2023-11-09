@@ -154,7 +154,7 @@ public class ModoJugar implements EstadoMascota{
 				int energiaRandom = (int) (Math.random() * ((20 - 10) +1)) + 10;
 				valorEnergia = (double) -energiaRandom;
 				int felicidadRandom = (int) (Math.random() * ((15 - 5) +1)) + 5;
-				valorFelicidad = (double) -felicidadRandom;
+				valorFelicidad = (double) felicidadRandom;
 				decidioJugar = true;
 				break;
 			case 2:
