@@ -31,17 +31,16 @@ public class ModoJugar implements EstadoMascota{
 	/**
 	* Numero random entre 10 y 20
 	*/
-	private int valorHambre =(int) (Math.random() * ((20 - 10) +1)) + 10;
+	private double valorHambre = 0;
 	/**
 	* Numero random entre 10 y 20
 	*/
-	private int valorEnergia =(int) (Math.random() * ((20 - 10) +1)) + 10;
+	private double valorEnergia = 0;
 	/**
 	* Numero random entre 5 y 15
 	*/
-	private int valorFelicidad =(int) (Math.random() * ((15 - 5) +1)) + 5;
+	private double valorFelicidad = 0;
 
-	private ListaJuegos listaEventos;
 
 	/**
 	 * Constructor por parámetros.
@@ -66,7 +65,7 @@ public class ModoJugar implements EstadoMascota{
 		jugarMinijuegos();
 		if(decidioJugar){
 			try{
-				hogar.jugarConMascota((double) -valorHambre, (double) -valorEnergia,(double) valorFelicidad);
+				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
 				hogar.depositar(monto);
 				System.out.println("");
 				System.out.println("	¡Que bien! ¡Tu mascota esta feliz de jugar contigo! :D");
@@ -128,7 +127,7 @@ public class ModoJugar implements EstadoMascota{
 		System.out.println("			----------------------------------------");
 		System.out.println("");
 		System.out.print("Elige una opcion: ");
-		/* 
+		
 		while(true){
 			try {
 				String opcionUsuario = sc.nextLine();
@@ -139,87 +138,36 @@ public class ModoJugar implements EstadoMascota{
 			}catch (NumberFormatException ex){
 					System.out.print("		Por favor, elige una opcion valida: "); }
 		}
-		*/
 		
-		switch(elegirOpcion(0, 2)){
+		
+		switch(opcion){
 			case 0:
 				decidioJugar = false;
 				break;
 			case 1:
 				Tablero t = new Tablero();
 				t.jugarTortugaMecanica();
-				decidioJugar = true;
 				monto = t.monedas();
+				int hambreRandom = (int) (Math.random() * ((20 - 10) +1)) + 10;
+				valorHambre = (double) -hambreRandom;
+				int energiaRandom = (int) (Math.random() * ((20 - 10) +1)) + 10;
+				valorEnergia = (double) -energiaRandom;
+				int felicidadRandom = (int) (Math.random() * ((15 - 5) +1)) + 5;
+				valorFelicidad = (double) -felicidadRandom;
+				decidioJugar = true;
 				break;
 			case 2:
-				
-				System.out.println("			--------------- EVENTOS -------------");
-				System.out.println();
-				System.out.println("			1. Fácil");
-				System.out.println("			2. Medio");
-				System.out.println("			3. Difícil");
-				System.out.println("			4. EXTREMO");
-				System.out.println("			0. Salir");
-				System.out.println();
-				System.out.print("Elige una opcion: ");
-				/* 
-				while(true){
-					try {
-						String opcionUsuario2 = sc.nextLine();
-						opcion2 =  Integer.parseInt(opcionUsuario);
-						if(opcion2 >-1 && opcion2 < 5){ 
-						break;
-						}else{ System.out.print("		Por favor, elige una opcion valida: ");}
-					}catch (NumberFormatException ex){
-							System.out.print("		Por favor, elige una opcion valida: "); }
-				}
-				*/
-
-				switch(elegirOpcion(0, 4)){
-					case 0:
-					decidioJugar = false;
-					break;
-					case 1:
-					verEventos(1);
-				}
-
-				decidioJugar = true;
-				monto = 4; //temporal
+				MenuEventos m = new MenuEventos();
+				monto = m.obtenerDinero();
+				valorHambre = m.modificaHambre();
+				valorEnergia = m.modificaEnergia();
+				valorFelicidad = m.modificaFelicidad();
+				decidioJugar = m.jugado();
 				break;
 		}
 		
 	}
 
-	public void verEventos(int dificultad){
-		listaEventos = new ListaJuegos();
-		ConstructorEventos con;
-		Iterator<E> i = listaEventos.creaIterador();
-		while(i.hasNext()){
-			con = (ConstructorEventos) i.next();
-			if(con.obtenerDificultad() == dificultad){
-				System.out.print(con.obtenerCodigo() + " ");
-				System.out.println(con.obtenerTitulo());
-				System.out.println("	" + con.obtenerDescripcion());
-				System.out.println();
-			}
-		}
-	}
-
-	public int elegirOpcion(int valorMin, int valorMax){
-		int opcionElegida = 0;
-		int opcion=0;
-		while(true){
-			try {
-				String opcionUsuario = sc.nextLine();
-				opcion =  Integer.parseInt(opcionUsuario);
-				if(opcion >- valorMin-1 && opcion < valorMax+1){ 
-				break;
-				}else{ System.out.print("		Por favor, elige una opcion valida: ");}
-			}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opcion valida: "); }
-		}
-		return opcionElegida;
-	}
 
 
 }
