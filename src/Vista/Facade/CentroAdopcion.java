@@ -144,7 +144,7 @@ public class CentroAdopcion{
 		hogar = new Hogar(mascota);
 		boolean seguir = false;
 		int opcion = 0;
-		System.out.println("********* E S O    B R A D    P E T S *********");
+		System.out.println("****************** E S O    B R A D    P E T S ******************");
 	
 		do{
 		System.out.println(" "); 
