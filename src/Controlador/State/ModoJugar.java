@@ -29,15 +29,15 @@ public class ModoJugar implements EstadoMascota{
 	 */
 	private double monto = 0;
 	/**
-	* Numero random entre 10 y 20
+	* Puntos de hambre que pierde la mascota si el usuario decide jugar
 	*/
 	private double valorHambre = 0;
 	/**
-	* Numero random entre 10 y 20
+	* Puntos de energia que pierde la mascota si el usuario decide jugar 
 	*/
 	private double valorEnergia = 0;
 	/**
-	* Numero random entre 5 y 15
+	* Puntos de felicidad que pierde la mascota si el usuario decide jugar 
 	*/
 	private double valorFelicidad = 0;
 
@@ -70,6 +70,7 @@ public class ModoJugar implements EstadoMascota{
 				System.out.println("");
 				System.out.println("	¡Que bien! ¡Tu mascota esta feliz de jugar contigo! :D");
 				hogar.asignarNuevoEstado(hogar.modoSuspender());
+				decidioJugar=false;
 			}catch(MuertePorNoComerException e){
 				System.out.println(" ");
 				System.out.println("			_-_-__-_-_-_-_-_-_-_-_W A R N I N G_-__-_-_-_-_-_-_-_-_");
