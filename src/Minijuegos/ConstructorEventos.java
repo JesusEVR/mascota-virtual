@@ -101,6 +101,7 @@ public class ConstructorEventos{
     public void obtenerResultado(){
         Random r = new Random();
         int numGanador = r.nextInt(valorResultado);
+        System.out.println(numGanador);
         int valorCasilla = rangoProb[numGanador];
 
         for(int i = 0; i < casos.length; i++){
@@ -110,7 +111,7 @@ public class ConstructorEventos{
                 asignarPuntosEnergia(casos[valorCasilla].modificaEnergia());
                 asignarPuntosFelicidad(casos[valorCasilla].modificaFelicidad());
                 resultadoTexto = casos[valorCasilla].textoResultado();
-                System.out.println(imprimeResultado());
+                System.out.println("        " + imprimeResultado());
             }
         }
     }
