@@ -20,12 +20,13 @@ public class MenuEventos{
         while(activo){
             System.out.println("\n"+" 				->-> E V E N T O S <-<- " + "\n");
             System.out.println();
-            System.out.println("            -----Dificultadad -----");
+            System.out.println("          -------Dificultad -------");
             System.out.println("			1. Fácil");
             System.out.println("			2. Medio");
             System.out.println("			3. Difícil");
             System.out.println("			4. EXTREMO");
             System.out.println("			0. Salir");
+            System.out.println("          --------------------------");
             System.out.println();
             System.out.print("Elige una opcion: ");
         
@@ -41,6 +42,7 @@ public class MenuEventos{
                     System.out.print("      Escribe el número del evento: ");
                     String codigoEvento = sc.nextLine();
                     seleccionarEvento(codigoEvento);
+                    break;
                 } else { 
                     System.out.print("		Por favor, elige una opcion valida: ");
                 }
