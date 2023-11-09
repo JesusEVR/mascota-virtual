@@ -55,13 +55,26 @@ public class ConstructorEventos{
         contadorCaso++;
     }
 
-    public String obtenerCodigo(){
-        return codigo;
+    public double modificaHambre(){
+        return puntosHambre;
+    }
+
+    public double modificaEnergia(){
+        return puntosEnergia;
+    }
+
+    public double modificaFelicidad(){
+        return puntosFelicidad;
     }
 
     public double obtenerDinero(){
         return dineroObtenido;
     }
+
+    public String obtenerCodigo(){
+        return codigo;
+    }
+
 
     public int obtenerDificultad(){
         return dificultad;
@@ -75,10 +88,10 @@ public class ConstructorEventos{
         return descripcion;
     }
 
-    public void agregarCaso(String resultado, double dineroObtenido, double puntosHambre, double puntosFelicidad, double puntosEnergia, int amplitudProb){
+    public void agregarCaso(String resultado, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad, int amplitudProb){
         for(int i = 0; i < casos.length; i++){
             if(casos[i] == null){
-                casos[i] = new Caso(resultado, dineroObtenido, puntosHambre, puntosFelicidad, puntosEnergia);
+                casos[i] = new Caso(resultado, dineroObtenido, puntosHambre, puntosEnergia, puntosFelicidad);
                 asignarAmplitudProb(amplitudProb);
                 return;
             }
@@ -97,9 +110,12 @@ public class ConstructorEventos{
                 asignarPuntosEnergia(casos[valorCasilla].modificaEnergia());
                 asignarPuntosFelicidad(casos[valorCasilla].modificaFelicidad());
                 resultadoTexto = casos[valorCasilla].textoResultado();
+                System.out.println(imprimeResultado());
             }
         }
     }
+
+
 
     public String imprimeResultado(){
         return resultadoTexto;

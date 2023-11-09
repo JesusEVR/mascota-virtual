@@ -7,7 +7,7 @@ public class Caso{
     private double puntosFelicidad;
     private double puntosEnergia;
 
-    public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosFelicidad, double puntosEnergia){
+    public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad){
         this.texto = texto;
         this.dineroObtenido = dineroObtenido;
         this.puntosHambre = puntosHambre;
