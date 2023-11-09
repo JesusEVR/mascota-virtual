@@ -2,6 +2,7 @@ package Minijuegos;
 
 import java.util.LinkedList;
 import java.util.Iterator;
+import java.util.Random;
 import Modelo.Iterator.Catalogo;
 import Modelo.Iterator.IteradorLista;
 
@@ -13,13 +14,14 @@ public class ListaJuegos implements Catalogo{
         listaJuegos = new LinkedList<>();
         String texto;
         String resultado;
+        
 
         texto = "Daniel se le ha complicado resolver un problema de Álgebra Superior y está pidiendo ayuda.";
         ConstructorEventos c1 = new ConstructorEventos("1", "Ayuda en Tarea", texto, 1, 2, 5);
-        resultado = "que pro ganaste.";
-        c1.agregarCaso(resultado, 3, 0, -10, 10, 4);
+        resultado = "Lograste resolver el problema, y Daniel los recompensó con 4 pejecoins.";
+        c1.agregarCaso(resultado, 4.0 , 0.0 , -10.0, 5.0, 4);
         resultado = "que noob perdiste.";
-        c2.agregarCaso(resultado, 0, -10, -5, 1);
+        c1.agregarCaso(resultado, 0, 0, -10.0, -5.0, 1);
         agregarEvento((Object) c1);
 
         
@@ -38,6 +40,6 @@ public class ListaJuegos implements Catalogo{
 	 * @return iterador
 	 */
 	public Iterator creaIterador(){
-		return new IteradorLista(listaAlimento);
+		return new IteradorLista(listaJuegos);
 	}
 }
