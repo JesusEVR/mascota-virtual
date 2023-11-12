@@ -16,6 +16,8 @@ public class ConstructorEventos{
     private int contadorCaso = 0;
     private int valorResultado;
     private String resultadoTexto;
+    private boolean muere = false;
+    
 
     public ConstructorEventos(String codigo, String titulo, String descripcion, int dificultad, int numCasos, int rangoProb){
         this.codigo = codigo;
@@ -26,6 +28,18 @@ public class ConstructorEventos{
         valorResultado = rangoProb;
         this.rangoProb = new Integer[rangoProb];
     }
+/* 
+    public ConstructorEventos(String codigo, String titulo, String descripcion, int dificultad, int numCasos, int rangoProb, boolean muere){
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.dificultad = dificultad;
+        casos = new Caso[numCasos];
+        valorResultado = rangoProb;
+        this.rangoProb = new Integer[rangoProb];
+        this.muere = muere;
+    }
+    */
 
     public ConstructorEventos(){
     }
@@ -47,12 +61,18 @@ public class ConstructorEventos{
     }
 
     public void asignarAmplitudProb(int amplitudProb){
-        for(int i = 0; i < amplitudProb; i++){
-            if(rangoProb[i] == null){
+        int contador = amplitudProb;
+        for(int i = 0; i < rangoProb.length; i++){
+            if(rangoProb[i] == null && contador > 0){
                 rangoProb[i] = contadorCaso;
+                contador--;
             }
         }
         contadorCaso++;
+    }
+
+    public void asignarMuerte(boolean muere){
+        this.muere = muere;
     }
 
     public double modificaHambre(){
@@ -65,6 +85,10 @@ public class ConstructorEventos{
 
     public double modificaFelicidad(){
         return puntosFelicidad;
+    }
+
+    public boolean obtenerMuerte(){
+        return muere;
     }
 
     public double obtenerDinero(){
@@ -91,7 +115,11 @@ public class ConstructorEventos{
     public void agregarCaso(String resultado, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad, int amplitudProb){
         for(int i = 0; i < casos.length; i++){
             if(casos[i] == null){
-                casos[i] = new Caso(resultado, dineroObtenido, puntosHambre, puntosEnergia, puntosFelicidad);
+                if(muere){
+                    casos[i] = new Caso(resultado, dineroObtenido, puntosHambre, puntosEnergia, puntosFelicidad, true);
+                }else{
+                    casos[i] = new Caso(resultado, dineroObtenido, puntosHambre, puntosEnergia, puntosFelicidad);
+                }
                 asignarAmplitudProb(amplitudProb);
                 return;
             }
@@ -101,7 +129,6 @@ public class ConstructorEventos{
     public void obtenerResultado(){
         Random r = new Random();
         int numGanador = r.nextInt(valorResultado);
-        System.out.println(numGanador);
         int valorCasilla = rangoProb[numGanador];
 
         for(int i = 0; i < casos.length; i++){
@@ -111,7 +138,9 @@ public class ConstructorEventos{
                 asignarPuntosEnergia(casos[valorCasilla].modificaEnergia());
                 asignarPuntosFelicidad(casos[valorCasilla].modificaFelicidad());
                 resultadoTexto = casos[valorCasilla].textoResultado();
-                System.out.println("        " + imprimeResultado());
+                asignarMuerte(casos[valorCasilla].obtenerMuerte());
+                System.out.println("\n       --RESULTADO--");
+                System.out.println("\n" + imprimeResultado());
             }
         }
     }

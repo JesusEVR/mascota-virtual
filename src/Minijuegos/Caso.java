@@ -6,6 +6,7 @@ public class Caso{
     private double puntosHambre;
     private double puntosFelicidad;
     private double puntosEnergia;
+    private boolean muere = false;
 
     public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad){
         this.texto = texto;
@@ -13,6 +14,15 @@ public class Caso{
         this.puntosHambre = puntosHambre;
         this.puntosFelicidad = puntosFelicidad;
         this.puntosEnergia = puntosEnergia;
+    }
+
+    public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad, boolean muere){
+        this.texto = texto;
+        this.dineroObtenido = dineroObtenido;
+        this.puntosHambre = puntosHambre;
+        this.puntosFelicidad = puntosFelicidad;
+        this.puntosEnergia = puntosEnergia;
+        this.muere = muere;
     }
 
     public void asignarTexto(String texto){
@@ -33,6 +43,10 @@ public class Caso{
 
     public double modificaEnergia(){
         return puntosEnergia;
+    }
+
+    public boolean obtenerMuerte(){
+        return muere;
     }
 
     public double obtenerDinero(){

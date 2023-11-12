@@ -9,6 +9,7 @@ public class MenuEventos{
     private double puntosEnergia;
     private double puntosFelicidad;
     private double dineroObtenido;
+    private boolean muere = false ;
     private ListaJuegos listaEventos;
     private boolean decidioJugar = true;
 
@@ -41,8 +42,9 @@ public class MenuEventos{
                     verEventos(opcion);
                     System.out.print("      Escribe el número del evento: ");
                     String codigoEvento = sc.nextLine();
-                    seleccionarEvento(codigoEvento);
-                    break;
+                    if(seleccionarEvento(codigoEvento) == true){
+                        break;
+                    } 
                 } else { 
                     System.out.print("		Por favor, elige una opcion valida: ");
                 }
@@ -76,6 +78,10 @@ public class MenuEventos{
         return dineroObtenido;
     }
 
+    public boolean obtenerMuerte(){
+        return muere;
+    }
+
 
     public void verEventos(int dificultad){
             listaEventos = new ListaJuegos();
@@ -92,7 +98,7 @@ public class MenuEventos{
             }
     }
 
-    public void seleccionarEvento(String codigo){
+    public boolean seleccionarEvento(String codigo){
         ConstructorEventos con;
         Iterator i = listaEventos.creaIterador();
 
@@ -104,10 +110,14 @@ public class MenuEventos{
                 puntosHambre = con.modificaHambre();
                 puntosEnergia = con.modificaEnergia();
                 puntosFelicidad = con.modificaFelicidad();
+                muere = con.obtenerMuerte();
+                decidioJugar = true;
                 System.out.println();
-                return;
+                return true;
             }
         }
+        decidioJugar = false;
         System.out.println("El código es inválido.");
+        return false;
     }
 }
