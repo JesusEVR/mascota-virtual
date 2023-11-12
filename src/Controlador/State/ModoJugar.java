@@ -3,6 +3,7 @@ package Controlador.State;
 import Minijuegos.*;
 import Modelo.Prototype.MuertePorNoComerException;
 import Modelo.Prototype.MuertePorCansancioException;
+import Modelo.Prototype.MuertePorAburrimientoException;
 
 import java.util.Iterator;
 import java.util.Scanner;
@@ -29,17 +30,19 @@ public class ModoJugar implements EstadoMascota{
 	 */
 	private double monto = 0;
 	/**
-	* Puntos de hambre que pierde la mascota si el usuario decide jugar
+	* Numero random entre 10 y 20
 	*/
 	private double valorHambre = 0;
 	/**
-	* Puntos de energia que pierde la mascota si el usuario decide jugar 
+	* Numero random entre 10 y 20
 	*/
 	private double valorEnergia = 0;
 	/**
-	* Puntos de felicidad que pierde la mascota si el usuario decide jugar 
+	* Numero random entre 5 y 15
 	*/
 	private double valorFelicidad = 0;
+
+	private boolean muere = false;
 
 
 	/**
@@ -63,14 +66,24 @@ public class ModoJugar implements EstadoMascota{
 	 */
 	public void jugar(){ 
 		jugarMinijuegos();
-		if(decidioJugar){
+		if(muere == true){
+			System.out.println(" ");
+				System.out.println("			_-_-__-_-_-_-_-_-_-_-_W A R N I N G_-__-_-_-_-_-_-_-_-_");
+				System.out.println("						¡Oh no!							");
+				System.out.println("		Tu mascota murió por un evento, quizá no fue buena idea apostar...");
+				System.out.println("							 					");
+				System.out.println("			_-_-_-_-_-_-_-_-_-_-_-_-_-__-__-_-_-_-_-__-_-_-_-_-_-_-_");
+				System.out.println(" ");
+				hogar.asignarNuevoEstado(hogar.modoMorir());
+				hogar.estaVivo(false);					
+		}
+		else if(decidioJugar && muere == false){
 			try{
 				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
 				hogar.depositar(monto);
 				System.out.println("");
-				System.out.println("	¡Que bien! ¡Tu mascota esta feliz de jugar contigo! :D");
+				System.out.println("	Saliendo del modo juego después de pasar el rato con tu mascota.");
 				hogar.asignarNuevoEstado(hogar.modoSuspender());
-				decidioJugar=false;
 			}catch(MuertePorNoComerException e){
 				System.out.println(" ");
 				System.out.println("			_-_-__-_-_-_-_-_-_-_-_W A R N I N G_-__-_-_-_-_-_-_-_-_");
@@ -91,6 +104,17 @@ public class ModoJugar implements EstadoMascota{
 				System.out.println(" ");
 				hogar.asignarNuevoEstado(hogar.modoMorir());
 				hogar.estaVivo(false);					
+			}
+			catch(MuertePorAburrimientoException exp){
+				System.out.println(" ");
+				System.out.println("			_-_-__-_-_-_-_-_-_-_-_W A R N I N G_-__-_-_-_-_-_-_-_-_");
+				System.out.println("						¡Oh no!							");
+				System.out.println("		La felicidad de tu mascota disminuyó tanto que falleció por depresión");
+				System.out.println("							 					");
+				System.out.println("			_-_-_-_-_-_-_-_-_-_-_-_-_-__-__-_-_-_-_-__-_-_-_-_-_-_-_");
+				System.out.println(" ");
+				hogar.asignarNuevoEstado(hogar.modoMorir());
+				hogar.estaVivo(false);	
 			}
 		}else{
 			System.out.println("\n"+"		Evita ilusionar a tu mascota asi por favor, no jugaste con el :( ");
@@ -124,7 +148,7 @@ public class ModoJugar implements EstadoMascota{
 		System.out.println("");
 		System.out.println("			1. Tortuga Mecanica");
 		System.out.println("			2. Eventos");
-		System.out.println("			0.Salir");
+		System.out.println("			0. Salir");
 		System.out.println("			----------------------------------------");
 		System.out.println("");
 		System.out.print("Elige una opcion: ");
@@ -154,8 +178,8 @@ public class ModoJugar implements EstadoMascota{
 				int energiaRandom = (int) (Math.random() * ((20 - 10) +1)) + 10;
 				valorEnergia = (double) -energiaRandom;
 				int felicidadRandom = (int) (Math.random() * ((15 - 5) +1)) + 5;
-				valorFelicidad = (double) felicidadRandom;
-				decidioJugar = true;
+				valorFelicidad = (double) -felicidadRandom;
+				decidioJugar = t.esGanador();
 				break;
 			case 2:
 				MenuEventos m = new MenuEventos();
@@ -163,6 +187,7 @@ public class ModoJugar implements EstadoMascota{
 				valorHambre = m.modificaHambre();
 				valorEnergia = m.modificaEnergia();
 				valorFelicidad = m.modificaFelicidad();
+				muere = m.obtenerMuerte();
 				decidioJugar = m.jugado();
 				break;
 		}
