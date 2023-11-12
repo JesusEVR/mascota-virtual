@@ -273,9 +273,10 @@ public class Hogar{
          * @param energia La cantidad de puntos de energia a sumar (o restar) cuando la mascota juega.
          * @param felicidad La cantidad de puntos de felicidad a sumar (o restar) cuando la mascota  juega.
          * @throws MuertePorNoComerException Si la mascota juega demasiado sin detenerse a comer y sus puntos de hambre son menores o iguales a cero.
-	 * @throws MuertePorCansancioException Si la mascota juega demasiado y sus puntos de energia son menores o iguales a cero.
+	 	 * @throws MuertePorCansancioException Si la mascota juega demasiado y sus puntos de energia son menores o iguales a cero.
+		 @throws MuertePorAburrimientoException Si la mascota pierde demasiados puntos de felicidad, y son menores o iguales a cero.
 	 */
-	public void jugarConMascota(double hambre, double energia, double felicidad) throws MuertePorNoComerException, MuertePorCansancioException{
+	public void jugarConMascota(double hambre, double energia, double felicidad) throws MuertePorNoComerException, MuertePorCansancioException, MuertePorAburrimientoException{
 		mascota.jugar(hambre, energia, felicidad);
 	}
 
