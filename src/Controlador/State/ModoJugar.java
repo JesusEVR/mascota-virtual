@@ -30,18 +30,21 @@ public class ModoJugar implements EstadoMascota{
 	 */
 	private double monto = 0;
 	/**
-	* Numero random entre 10 y 20
+	* Valor de los puntos que pierde/gana en el atributo hambre
 	*/
 	private double valorHambre = 0;
 	/**
-	* Numero random entre 10 y 20
+	*Valor de los puntos que pierde/gana en el atributo hambre
 	*/
 	private double valorEnergia = 0;
 	/**
-	* Numero random entre 5 y 15
+	* Valor de los puntos que pierde/gana en el atributo hambre
 	*/
 	private double valorFelicidad = 0;
 
+	/**
+	* Estado vivo o muerto de la mascota
+	*/
 	private boolean muere = false;
 
 
@@ -66,7 +69,7 @@ public class ModoJugar implements EstadoMascota{
 	 */
 	public void jugar(){ 
 		jugarMinijuegos();
-		if(muere == true){
+		if(muere){
 			System.out.println(" ");
 				System.out.println("			_-_-__-_-_-_-_-_-_-_-_W A R N I N G_-__-_-_-_-_-_-_-_-_");
 				System.out.println("						¡Oh no!							");
@@ -77,12 +80,12 @@ public class ModoJugar implements EstadoMascota{
 				hogar.asignarNuevoEstado(hogar.modoMorir());
 				hogar.estaVivo(false);					
 		}
-		else if(decidioJugar && muere == false){
+		else if(decidioJugar && !muere){
 			try{
 				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
 				hogar.depositar(monto);
 				System.out.println("");
-				System.out.println("	Saliendo del modo juego después de pasar el rato con tu mascota.");
+				System.out.println("	Saliendo del area de juego después de pasar el rato con tu mascota.");
 				hogar.asignarNuevoEstado(hogar.modoSuspender());
 			}catch(MuertePorNoComerException e){
 				System.out.println(" ");
@@ -179,7 +182,7 @@ public class ModoJugar implements EstadoMascota{
 				valorEnergia = (double) -energiaRandom;
 				int felicidadRandom = (int) (Math.random() * ((15 - 5) +1)) + 5;
 				valorFelicidad = (double) -felicidadRandom;
-				decidioJugar = t.esGanador();
+				decidioJugar = true;
 				break;
 			case 2:
 				MenuEventos m = new MenuEventos();
