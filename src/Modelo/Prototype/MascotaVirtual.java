@@ -353,9 +353,10 @@ public class MascotaVirtual implements Cloneable{
          * @param energia La cantidad de puntos de energia a sumar (o restar) cuando la mascota juega.
          * @param felicidad La cantidad de puntos de felicidad a sumar (o restar) cuando la mascota  juega.
          * @throws MuertePorNoComerException Si la mascota juega demasiado sin detenerse a comer y sus puntos de hambre son menores o iguales a cero.
-	 * @throws MuertePorCansancioException Si la mascota juega demasiado y sus puntos de energia son menores o iguales a cero.
+	 	 * @throws MuertePorCansancioException Si la mascota juega demasiado y sus puntos de energia son menores o iguales a cero.
+		 * @throws MuertePorAburrimientoException Si la mascota pierde demasiados puntos de felicidad, y son menores o iguales a cero.
 	 */
-	public void jugar(double hambre, double energia, double felicidad) throws MuertePorNoComerException, MuertePorCansancioException{
+	public void jugar(double hambre, double energia, double felicidad) throws MuertePorNoComerException, MuertePorCansancioException, MuertePorAburrimientoException{
 		double nuevaHambre = puntosHambre + hambre;
 		double nuevaEnergia = puntosEnergia+energia;
 		
@@ -378,10 +379,15 @@ public class MascotaVirtual implements Cloneable{
 		if(puntosEnergia <= 0){
 			puntosEnergia = 0;
 		}
+		if(puntosFelicidad <= 0){
+			puntosFelicidad = 0;
+		}
 
 		if(puntosHambre==0) throw new MuertePorNoComerException();
 		
 		if(puntosEnergia==0) throw new MuertePorCansancioException();
+
+		if(puntosFelicidad==0) throw new MuertePorAburrimientoException();
 		
 	}
 
