@@ -77,15 +77,16 @@ public class ModoJugar implements EstadoMascota{
 				System.out.println("							 					");
 				System.out.println("			_-_-_-_-_-_-_-_-_-_-_-_-_-__-__-_-_-_-_-__-_-_-_-_-_-_-_");
 				System.out.println(" ");
+				hogar.muerteSubita();
+				hogar.estaVivo(false);
 				hogar.asignarNuevoEstado(hogar.modoMorir());
-				hogar.estaVivo(false);					
-		}
-		else if(decidioJugar && !muere){
+		}else if(decidioJugar && !muere){
 			try{
 				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
 				hogar.depositar(monto);
 				System.out.println("");
-				System.out.println("	Saliendo del area de juego después de pasar el rato con tu mascota.");
+				System.out.println("		Saliendo del area de juego después de pasar el rato con tu mascota :)");
+				System.out.println("");
 				hogar.asignarNuevoEstado(hogar.modoSuspender());
 			}catch(MuertePorNoComerException e){
 				System.out.println(" ");
@@ -144,7 +145,7 @@ public class ModoJugar implements EstadoMascota{
 	/**
 	 * Método auxiliar que despliega el menú de minijuegos.
 	 */
-	private void jugarMinijuegos(){//Aqui va el sistema de minijuegos
+	private void jugarMinijuegos(){
 		int opcion=0;
 		System.out.println("");
 		System.out.println("			--------------- MINIJUEGOS -------------");
@@ -180,8 +181,8 @@ public class ModoJugar implements EstadoMascota{
 				valorHambre = (double) -hambreRandom;
 				int energiaRandom = (int) (Math.random() * ((20 - 10) +1)) + 10;
 				valorEnergia = (double) -energiaRandom;
-				int felicidadRandom = (int) (Math.random() * ((15 - 5) +1)) + 5;
-				valorFelicidad = (double) -felicidadRandom;
+				int felicidadRandom = (int) (Math.random() * ((30 - 10) +1)) + 10;
+				valorFelicidad = (double) felicidadRandom;
 				decidioJugar = true;
 				break;
 			case 2:
@@ -193,10 +194,6 @@ public class ModoJugar implements EstadoMascota{
 				muere = m.obtenerMuerte();
 				decidioJugar = m.jugado();
 				break;
-		}
-		
+		}		
 	}
-
-
-
 }

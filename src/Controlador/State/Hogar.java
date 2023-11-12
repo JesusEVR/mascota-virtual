@@ -490,4 +490,12 @@ public class Hogar{
 		mascota.depositar(monto);
 	}
 	
+	/**
+	 * Metodo especial que provoca la muerte de la mascota al instante
+     * 
+	 */
+	public void muerteSubita(){
+		mascota.muerte();
+	}
+	
 }

@@ -440,4 +440,13 @@ public class MascotaVirtual implements Cloneable{
 		if(puntosFelicidad==0) throw new MuertePorAburrimientoException();
 		
 	}
+	
+	/**
+	* Metodo que modifica sobrescribe los puntos de la mascota a cero provocando una muerte instantanea 
+	*/
+	public void muerte(){
+		puntosHambre=0;
+		puntosFelicidad=0;
+		puntosEnergia=0;
+	}	
 }
