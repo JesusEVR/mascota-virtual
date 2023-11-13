@@ -53,7 +53,7 @@ public class MenuEventos{
                     verEventos(opcion);
                     System.out.print("      Escribe el número del evento: ");
                     String codigoEvento = sc.nextLine();
-                    if(seleccionarEvento(codigoEvento) == true){
+                    if(seleccionarEvento(codigoEvento, opcion) == true){
                         break;
                     } 
                 } else { 
@@ -109,13 +109,13 @@ public class MenuEventos{
             }
     }
 
-    public boolean seleccionarEvento(String codigo){
+    public boolean seleccionarEvento(String codigo, int dificultad){
         ConstructorEventos con;
         Iterator i = listaEventos.creaIterador();
 
         while(i.hasNext()){
             con = (ConstructorEventos) i.next();
-            if(con.obtenerCodigo().equals(codigo)){
+            if(con.obtenerCodigo().equals(codigo) && con.obtenerDificultad() == dificultad){
                 con.obtenerResultado();
                 dineroObtenido = con.obtenerDinero();
                 puntosHambre = con.modificaHambre();
