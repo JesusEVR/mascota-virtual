@@ -84,15 +84,14 @@ public class ModoJugar implements EstadoMascota{
 		}else if(decidioJugar && !muere){
 			try{
 				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
-				hogar.depositar(monto);
+				//hogar.depositar(monto);
 				if(monto < 0){
 					try{
 						hogar.comprar(-monto);
 					} catch(SaldoInsuficienteException s){
 						System.out.println(		"Has tenido tan mala racha que hasta tienes una deuda en tu Saldo.");
 					}
-				}
-				else {
+				}else {
 					hogar.depositar(monto);
 				}
 				System.out.println("");
