@@ -4,6 +4,7 @@ import Minijuegos.*;
 import Modelo.Prototype.MuertePorNoComerException;
 import Modelo.Prototype.MuertePorCansancioException;
 import Modelo.Prototype.MuertePorAburrimientoException;
+import Modelo.Prototype.SaldoInsuficienteException;
 
 import java.util.Iterator;
 import java.util.Scanner;
@@ -84,6 +85,16 @@ public class ModoJugar implements EstadoMascota{
 			try{
 				hogar.jugarConMascota(valorHambre, valorEnergia, valorFelicidad);
 				hogar.depositar(monto);
+				if(monto < 0){
+					try{
+						hogar.comprar(-monto);
+					} catch(SaldoInsuficienteException s){
+						System.out.println(		"Has tenido tan mala racha que hasta tienes una deuda en tu Saldo.");
+					}
+				}
+				else {
+					hogar.depositar(monto);
+				}
 				System.out.println("");
 				System.out.println("		Saliendo del area de juego después de pasar el rato con tu mascota :)");
 				System.out.println("");
