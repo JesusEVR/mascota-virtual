@@ -489,6 +489,16 @@ public class Hogar{
 	public void depositar(double monto){
 		mascota.depositar(monto);
 	}
+
+	/**
+	 * Retira saldo del jugador cuando se realiza una compra. Manda a llamar el método 'comprar' de la clase MascotaVirtual.
+         * 
+	 * @param monto La cantidad a retirar en el saldo.
+	 * @throws SaldoInsuficienteException Si el monto a pagar es superior al saldo con el que cuenta el usuario.
+	 */
+	public void comprar(double monto) throws SaldoInsuficienteException{
+		mascota.comprar(monto);
+	}
 	
 	/**
 	 * Metodo especial que provoca la muerte de la mascota al instante
