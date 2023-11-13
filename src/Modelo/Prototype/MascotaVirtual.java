@@ -256,33 +256,33 @@ public class MascotaVirtual implements Cloneable{
 	/**
 	 * Metodo que determina si la mascota está aburrida.
 	 *
-         * @return 'true' si los puntos de felicidad (actuales) de la mascota son menores o iguales al veiente porciento del total, 'false' en el caso contrario.
+         * @return 'true' si los puntos de felicidad (actuales) de la mascota son menores o iguales al treinta porciento del total, 'false' en el caso contrario.
 	 */
 	public boolean estaAburrido(){
-		double veintePorciento = PUNTOS_FELICIDAD * 0.3;
-		if(puntosFelicidad <= veintePorciento) return true; //la felicidad esta al 30% o menos 
+		double treintaPorciento = PUNTOS_FELICIDAD * 0.3;
+		if(puntosFelicidad <= treintaPorciento) return true;
 		return false;
 	}
 
 	/**
 	 * Metodo que determina si la mascota tiene hambre.
 	 *
-         * @return 'true' si los puntos de hambre (actuales) de la mascota son menores o iguales al veiente porciento del total, 'false' en el caso contrario.
+         * @return 'true' si los puntos de hambre (actuales) de la mascota son menores o iguales al treinta porciento del total, 'false' en el caso contrario.
 	 */
 	public boolean tieneHambre(){
-		double veintePorciento = PUNTOS_HAMBRE * 0.3;
-		if(puntosHambre <= veintePorciento) return true;
+		double treintaPorciento = PUNTOS_HAMBRE * 0.3;
+		if(puntosHambre <= treintaPorciento) return true;
 		return false;
 	}
 
 	/**
 	 * Metodo que determina si la mascota tiene sueño / está cansada.
 	 *
-         * @return 'true' si los puntos de energia (actuales) de la mascota son menores o iguales al veiente porciento del total, 'false' en el caso contrario.
+         * @return 'true' si los puntos de energia (actuales) de la mascota son menores o iguales al treinta porciento del total, 'false' en el caso contrario.
 	 */
 	public boolean tieneSuenio(){
-		double veintePorciento = PUNTOS_ENERGIA * 0.3;
-		if(puntosEnergia <= veintePorciento) return true;
+		double treintaPorciento = PUNTOS_ENERGIA * 0.3;
+		if(puntosEnergia <= treintaPorciento) return true;
 		return false;
 	}
 
