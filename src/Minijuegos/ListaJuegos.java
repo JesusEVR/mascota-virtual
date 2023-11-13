@@ -31,7 +31,8 @@ public class ListaJuegos implements Catalogo{
         //evento 2
         texto = "Sal a explorar el parque con tu mascota.";
         ConstructorEventos c2 = new ConstructorEventos("2", "Paseo en el parque", texto, 1, 3, 5);
-        resultado = "En el paseo, le respondiste a una mujer la dirección de la plaza, por lo que en agradecimiento les \n" + "dió 3 pejecoins.";
+        resultado = "En el paseo, le respondiste a una mujer la dirección de la plaza, por lo que en agradecimiento les \n" + 
+        "dió 3 pejecoins.";
         c2.agregarCaso(resultado, 3, -10, -12, 10, 3);
         resultado = "En el paseo, te encontraste caminando 8 pejecoins, ¡Que suerte!";
         c2.agregarCaso(resultado, 8, -10, -10, 20, 1);
@@ -106,7 +107,8 @@ public class ListaJuegos implements Catalogo{
         agregarEvento((Object) c6);
 
         //evento 7
-        texto = "En un callejón solitario, unos sujetos con traje adinerados sospechosos ponen a sus mascotas a jugar, pero les falta una...";
+        texto = "En un callejón solitario, unos sujetos con traje adinerados sospechosos ponen a sus\n" +
+        "mascotas a jugar, pero les falta una...";
         ConstructorEventos c7 = new ConstructorEventos("7", "¿¡RULETA RUSA!?", texto, 4, 4, 7);
         resultado = "Comienza el juego...\n" +
         "6...\n" +
@@ -174,6 +176,7 @@ public class ListaJuegos implements Catalogo{
         "Tu mascota contraataca con un Hadouken, pero ese bulldog es imparable y ataca aunque reciba daño!\n" +
         "El ataque fue impactante y tu mascota cae malherida al suelo!\n" +
         "\nHas perdido... No se supone que debías cuidar a tu mascota? o_O";
+        c8.asignarMuerte(false);
         c8.agregarCaso(resultado, -30, -26, -19, -15, 1);
         resultado = "       QUE COMIENCE EL COMBATE!\n" +
         "\nTu mascota le ha tocado enfrentarse a... El mismísimo Big Chungus lvl 200 con build de fuerza y destreza!\n" +
