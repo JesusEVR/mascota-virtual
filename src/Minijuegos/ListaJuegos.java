@@ -176,7 +176,7 @@ public class ListaJuegos implements Catalogo{
         "\nHas perdido... No se supone que debías cuidar a tu mascota? o_O";
         c8.agregarCaso(resultado, -30, -26, -19, -15, 1);
         resultado = "       QUE COMIENCE EL COMBATE!\n" +
-        "\nTu mascota le ha tocado enfrentarse a... El mismísimo Floppa lvl 200 con build de fuerza y destreza!\n" +
+        "\nTu mascota le ha tocado enfrentarse a... El mismísimo Big Chungus lvl 200 con build de fuerza y destreza!\n" +
         "\nFloppa ataca con un ataque pesado, pero tu mascota logra esquivarlo!\n" +
         "Tu mascota hace una embestida al estilo indio e impacta!\n" +
         "Floppa comenzó a rodar sin sentido y se ha alejado!\n" +
