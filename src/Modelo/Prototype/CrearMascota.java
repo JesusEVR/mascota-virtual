@@ -68,6 +68,7 @@ public class CrearMascota{
 	/**
 	 * Método auxiliar que crea tres mascotas virtuales correspondientes a la
          * dificultad fácil, y después las agrega a la Hashtable de la misma.
+	 * El orden de los valores son nombre, puntos de hambre, puntos de energía, puntos de felicidad y saldo.
 	 */
 	private void crearMascotaNivelFacil(){
 		MascotaVirtual cherk = mascotaAsignarNivel("cherk",120,100,90,40);
@@ -96,6 +97,7 @@ public class CrearMascota{
 	/**
 	 * Método auxiliar que crea tres mascotas virtuales correspondientes a la
          * dificultad difícil, y después las agrega a la Hashtable de la misma.
+	 * El orden de los valores son nombre, puntos de hambre, puntos de energía, puntos de felicidad y saldo.
 	 */
 	private void crearMascotaNivelDificil(){
 		MascotaVirtual cherk = mascotaAsignarNivel("cherk",70,80,70,30);
