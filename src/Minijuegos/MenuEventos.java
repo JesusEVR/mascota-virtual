@@ -21,14 +21,14 @@ public class MenuEventos{
         while(activo){
             System.out.println("\n"+" 				->-> E V E N T O S <-<- " + "\n");
             System.out.println();
-            System.out.println("¡Bienvenido a los eventos, donde puedes salir a explorar el mundo con tu mascota");
-            System.out.println("y realizar todo tipo de actividades!");
+            System.out.println("¡Bienvenido a los eventos, donde puedes salir a explorar el");
+            System.out.println(" mundo con tu mascota y realizar todo tipo de actividades!");
             System.out.println("Cuando participas un evento, pueden ocurrir diversos escenarios en los que tú y tu mascota");
             System.out.println("puedan ganar monedas por ello, pero también esta la posibilidad de fallar y perder moneditas.");
             System.out.println();
-            System.out.println("Tu mascota cambia sus estadisticas dependiendo del evento. A mayor dificultad,");
-            System.out.println("es mayor el rango en el que le puede dar hambre, cansarse y modificar su felicidad. Además, también ");
-            System.out.println("aumenta el riesgo o recompensa por evento.");
+            System.out.println("Tu mascota cambia sus estadisticas dependiendo del evento.");
+            System.out.println("A mayor dificultad, es mayor el rango en el que le puede dar hambre, cansarse y");
+            System.out.println("modificar su felicidad. Además, también aumenta el riesgo o recompensa por evento.");
             System.out.println();
             System.out.println();
             System.out.println("          -------Dificultad -------");
@@ -98,9 +98,9 @@ public class MenuEventos{
             while(i.hasNext()){
                 con = (ConstructorEventos) i.next();
                 if(con.obtenerDificultad() == dificultad){
-                    System.out.print("Codigo:" + con.obtenerCodigo() + "   ");
+                    System.out.print("Codigo: " + con.obtenerCodigo() + "   Evento: ");
                     System.out.println(con.obtenerTitulo());
-                    System.out.println("      	" + con.obtenerDescripcion());
+                    System.out.println("   	" + con.obtenerDescripcion());
                     System.out.println();
                 }
             }
