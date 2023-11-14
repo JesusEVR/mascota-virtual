@@ -100,7 +100,7 @@ public class MenuEventos{
                 if(con.obtenerDificultad() == dificultad){
                     System.out.print("Codigo: " + con.obtenerCodigo() + "   Evento: ");
                     System.out.println(con.obtenerTitulo());
-                    System.out.println("   	" + con.obtenerDescripcion());
+                    System.out.println("" + con.obtenerDescripcion());
                     System.out.println();
                 }
             }
