@@ -9,10 +9,24 @@ import javax.management.ConstructorParameters;
 import Modelo.Iterator.Catalogo;
 import Modelo.Iterator.IteradorLista;
 
+/**
+ * Clase que define la lista de Juegos (eventos) del minijuego.
+ * 
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version noviembre 2023
+ *
+ */
 public class ListaJuegos implements Catalogo{
-    
+    /**
+     * Lista que guarda los eventos del minijuego.
+     */
     protected LinkedList<Object> listaJuegos;
 
+    /**
+     * Constructor por omisión. Se crean los eventos del minijuego y se agregan a la lista.
+     */
     public ListaJuegos(){
         listaJuegos = new LinkedList<>();
         String texto;
@@ -189,16 +203,16 @@ public class ListaJuegos implements Catalogo{
         c8.agregarCaso(resultado, 60, -25, -17, -16, 1);
         agregarEvento((Object) c8);
     }
-
+	
 	/**
-	 * Método que agrega un producto a la lista
+	 * Método que agrega un evento a la lista de eventos
 	 */
 	public void agregarEvento(Object a){
 		listaJuegos.add(a);
 	}
 
 	/**
-	 * Metodo que crea un iterador para recorrer los elementos del menu
+	 * Metodo que crea un iterador para recorrer los elementos de la lista de eventos
 	 *
 	 * @return iterador
 	 */
