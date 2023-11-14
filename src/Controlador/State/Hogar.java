@@ -503,7 +503,7 @@ public class Hogar{
 	
 	/**
 	 * Metodo especial que provoca la muerte de la mascota al instante
-     * 
+         * 
 	 */
 	public void muerteSubita(){
 		mascota.muerte();
