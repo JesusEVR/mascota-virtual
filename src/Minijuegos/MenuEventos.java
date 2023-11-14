@@ -98,9 +98,9 @@ public class MenuEventos{
             while(i.hasNext()){
                 con = (ConstructorEventos) i.next();
                 if(con.obtenerDificultad() == dificultad){
-                    System.out.print(" " + con.obtenerCodigo() + "   ");
+                    System.out.print("Codigo:" + con.obtenerCodigo() + "   ");
                     System.out.println(con.obtenerTitulo());
-                    System.out.println("	" + con.obtenerDescripcion());
+                    System.out.println("      	" + con.obtenerDescripcion());
                     System.out.println();
                 }
             }
