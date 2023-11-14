@@ -124,7 +124,7 @@ public class Tablero{
 	* Imprime el tablero
 	*/
 	private void imprimeTablero(){
-		System.out.println("\n"+"		 T A B  L E R O "+"\n");
+		System.out.println("\n"+"		 T A B L E R O "+"\n");
 		for(int i=0; i<tablero.length; i++){
 			for(int j=0; j<tablero[i].length; j++){
 				System.out.print(tablero[i][j]);
@@ -314,7 +314,7 @@ public class Tablero{
 		System.out.println("");
 		System.out.println("Como la tortuga esta hecha de un metal muy pesado, debes recoger la moneda en el punto exacto.");
 		System.out.println("(Es decir, en el tablero debes colocar a la tortuga JUSTO encima de la moneda, ni mas, ni menos)");
-		System.out.println("Ya que sus patas de metal puden aplastar la moneda, perdiendo su oprtunidad de hacer amigos :(");
+		System.out.println("Ya que sus patas de metal pueden aplastar la moneda, perdiendo su oportunidad de hacer amigos :(");
 		System.out.println("(aunque tu solo perderas una partida)");
 		System.out.println("");
 		System.out.println("					¡Mucha suerte!");
