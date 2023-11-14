@@ -26,7 +26,7 @@ public class ConstructorEventos{
      */
     private String descripcion;
     /**
-     * dificultad para clasificar los eventos según la probabilidad
+     * Dificultad para clasificar los eventos según la probabilidad
      */
     private int dificultad;
     /**
@@ -41,16 +41,16 @@ public class ConstructorEventos{
      */
     private Integer[] rangoProb;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo hambre de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo hambre de la mascota
+     */
     private double puntosHambre;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo felicidad de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo felicidad de la mascota
+     */
     private double puntosFelicidad;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo energía de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo energía de la mascota
+     */
     private double puntosEnergia;
     /**
      * Cantidad de dinero que se gana al ocurrir un evento
@@ -74,7 +74,8 @@ public class ConstructorEventos{
     private boolean muere = false;
     
     /**
-     * Constructor de un Evento.
+     * Constructor por parámetros de un Evento.
+     *
      * @param codigo Identificador del evento
      * @param titulo Titulo del evento
      * @param descripcion Descripcion del evento
@@ -224,12 +225,13 @@ public class ConstructorEventos{
 
     /**
      * Método que agrega un caso al arreglo de casos, con sus valores definidos.
-     * @param resultado texto del resultado del caso
-     * @param dineroObtenido dinero ganado del caso
-     * @param puntosHambre puntos de Hambre a modificar
-     * @param puntosEnergia puntos de energia a modificar
-     * @param puntosFelicidad puntos dse felicidad a modificar
-     * @param amplitudProb probabilidad de ocurrencia del caso dentro del arreglo []rangoProb
+     *
+     * @param resultado El texto del resultado del caso
+     * @param dineroObtenido El dinero ganado del caso
+     * @param puntosHambre Los puntos de Hambre a modificar
+     * @param puntosEnergia Los puntos de energia a modificar
+     * @param puntosFelicidad Los puntos dse felicidad a modificar
+     * @param amplitudProb La probabilidad de ocurrencia del caso dentro del arreglo []rangoProb
      */
     public void agregarCaso(String resultado, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad, int amplitudProb){
         for(int i = 0; i < casos.length; i++){
