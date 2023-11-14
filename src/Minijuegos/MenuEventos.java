@@ -3,21 +3,58 @@ package Minijuegos;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Menú del minijuego 'Eventos' que se imprime para el usuario a través del objeto Hogar.
+ * 
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version noviembre 2023
+ *
+ */
 public class MenuEventos{
-
+    /**
+     * Puntos de hambre que se sumarán o restarán a la mascota virutal al jugar un evento
+     */
     private double puntosHambre;
+    /**
+     * Puntos de energía que se sumaraán o restarán a la mascota al jugar un evento.
+     */
     private double puntosEnergia;
+    /**
+     * Puntos de felicidad que se sumarán o restarán a la mascota al jugar un evento.
+     */
     private double puntosFelicidad;
+    /**
+     * Dinero que obtiene el jugador al jugar un evento y resultar en un final bueno.
+     */
     private double dineroObtenido;
+    /**
+     * Booleano que determina si la mascota ha muerto.
+     */
     private boolean muere = false ;
+    /**
+     * Lista de eventos del minijuego.
+     */
     private ListaJuegos listaEventos;
+    /**
+     * Booleano que determina si e jugador aceptó jugar al minijuego 'Eventos'.
+     */
     private boolean decidioJugar = true;
+    /**
+     * Objeto de tipo scanner para que el usuario pueda escribir respuestas.
+     */
+    public Scanner sc = new Scanner(System.in);
 
-    Scanner sc = new Scanner(System.in);
-
+    /**
+     * Constructor por omisión del menú.
+     */
     public MenuEventos(){
+        
         boolean activo = true;
+        
         int opcion = 0;
+        
         while(activo){
             System.out.println("\n"+" 				->-> E V E N T O S <-<- " + "\n");
             System.out.println();
@@ -65,32 +102,59 @@ public class MenuEventos{
         }
     
     }
-        
+
+     /**
+     * Devuelve el atributo decidioJugar
+     * @return decidioJugar
+     */
     public boolean jugado(){
         return decidioJugar;
     }
     
-
+    /**
+     * Devuelve el atributo puntosHambre
+     * @return puntosHambre
+     */
     public double modificaHambre(){
         return puntosHambre;
     }
 
+    /**
+     * Devuelve el atributo puntosEnergia
+     * @return puntosEnergia
+     */
     public double modificaEnergia(){
         return puntosEnergia;
     }
 
+    /**
+     * Devuelve el atributo puntosFelicidad
+     * @return puntosFelicidad
+     */
     public double modificaFelicidad(){
         return puntosFelicidad;
     }
 
+    /**
+     * Devuelve el atributo dineroObtenido.
+     * @return dineroObtenido
+     */
     public double obtenerDinero(){
         return dineroObtenido;
     }
 
+    /**
+     * Devuelve el atributo muere.
+     * @return muere Un booleano que determina si la mascota murió.
+     */
     public boolean obtenerMuerte(){
         return muere;
     }
-
+    
+    /**
+     * Método que recorre la lista de eventos e imprime la información necesaria para el usuario, dependiendo la dificultad que haya elegido.
+     * @param dificultad La dificultad que eligió el jugador.
+     */
     public void verEventos(int dificultad){
             listaEventos = new ListaJuegos();
             ConstructorEventos con;
@@ -106,6 +170,13 @@ public class MenuEventos{
             }
     }
 
+    /**
+     * Método que selecciona un evento de la lista de eventos, a partir de datos dados por el jugador.
+     *
+     * @param codigo El código único de un evento que el usuario ingresó
+     * @param dificultad La dificultad que el jugador escogió.
+     * @return 'true' si la eleción de evento correpondió a la dificultad, 'false' en otro caso.
+     */
     public boolean seleccionarEvento(String codigo, int dificultad){
         ConstructorEventos con;
         Iterator i = listaEventos.creaIterador();
