@@ -309,7 +309,7 @@ public class Hogar{
 	public void verCatalogo(){
 		Producto p;
 		Iterator i = catalogo.creaIterador();
-		System.out.println(">>>>>>>>> C A T A L O G O   D E   A L I M E N T O S <<<<<<<<");
+		System.out.println(">>>>>>>>> C A T A L O G O   D E   A L I M E N T O S <<<<<<<<\n");
 		while(i.hasNext()){
 			p = (Producto) i.next();
 			System.out.println(p.informacionConPrecio());
@@ -331,6 +331,7 @@ public class Hogar{
 	 * Imprime la información de los productos que estén dentro del refigerador del jugador.
 	 */
 	public void verRefrigerador(){
+		System.out.println("\n");
 		System.out.println("		_-_-_-_-_ R E F R I G E R A D O R _-_-_-_-_");
 		if(refrigeradorVacio()){
 			System.out.println("			Este refrigerador esta vacio o.O");
@@ -382,7 +383,7 @@ public class Hogar{
 		Producto producto;
 		System.out.println("	");
 		System.out.println("	");
-		System.out.println("*-*-*-*-*-*-*-*-*-**-*-*-*-*  M I  N I - S U P E R *-*-*-*-*-*-*-*-*-**-*-*-*-*-*");
+		System.out.println("*-*-*-*-*-*-*-*-*-**-*-*-*-* M I  N I - S U P E R *-*-*-*-*-*-*-*-*-**-*-*-*-*-*");
 		System.out.println("");
 		System.out.println("A continuacion se muestra el catálogo de los alimentos disponibles que ");
 		System.out.println(" puedes comprar para alimentar a tu mascota");
@@ -440,7 +441,7 @@ public class Hogar{
 		
 		if(puedePagar){
 			double total = carritoVirtual.precio();
-			System.out.println("Tu lista de compras es:	");
+			System.out.println("Tu lista de compras es:	"+"\n");
 			System.out.println("________________________T I C K E T__________________________");
 			System.out.println(carritoVirtual.informacionConPrecio());
 			System.out.println("				Total:	$" +total+" pejecoins " );
