@@ -21,21 +21,20 @@ public class MenuEventos{
         while(activo){
             System.out.println("\n"+" 				->-> E V E N T O S <-<- " + "\n");
             System.out.println();
-            System.out.println("¡Bienvenido a los eventos, donde puedes salir salir a explorar el mundo con tu mascota");
+            System.out.println("¡Bienvenido a los eventos, donde puedes salir a explorar el mundo con tu mascota");
             System.out.println("y realizar todo tipo de actividades!");
-            System.out.println("Cuando realizas un evento, pueden ocurrir diversos escenarios en los que tu y tu mascota");
-            System.out.println("lograrán completarlo y podrán ganar dinero, pero también está la posibilidad de fallar, e.");
-            System.out.println("Incluso perder pejecoins.");
+            System.out.println("Cuando participas un evento, pueden ocurrir diversos escenarios en los que tú y tu mascota");
+            System.out.println("puedan ganar monedas por ello, pero también esta la posibilidad de fallar y perder moneditas.");
             System.out.println();
-            System.out.println("Tu mascota cambiará sus estadísticas dependiendo del evento, a mayor dificultad,");
-            System.out.println("es mayor el rango en que le puede dar hambre, cansarse, modificar su felicidad y también ");
-            System.out.println("aumenta el riesgo/recompensa por evento.");
+            System.out.println("Tu mascota cambia sus estadisticas dependiendo del evento. A mayor dificultad,");
+            System.out.println("es mayor el rango en el que le puede dar hambre, cansarse y modificar su felicidad. Además, también ");
+            System.out.println("aumenta el riesgo o recompensa por evento.");
             System.out.println();
             System.out.println();
             System.out.println("          -------Dificultad -------");
-            System.out.println("			1. Fácil");
+            System.out.println("			1. Facil");
             System.out.println("			2. Medio");
-            System.out.println("			3. Difícil");
+            System.out.println("			3. Dificil");
             System.out.println("			4. EXTREMO");
             System.out.println("			0. Salir");
             System.out.println("          --------------------------");
@@ -51,7 +50,7 @@ public class MenuEventos{
                 }
                 else if(opcion >-1 && opcion < 5){ 
                     verEventos(opcion);
-                    System.out.print("      Escribe el número del evento: ");
+                    System.out.print("      Escribe el numero del evento: ");
                     String codigoEvento = sc.nextLine();
                     if(seleccionarEvento(codigoEvento, opcion) == true){
                         break;
@@ -64,7 +63,6 @@ public class MenuEventos{
             }
 
         }
-        
     
     }
         
@@ -92,7 +90,6 @@ public class MenuEventos{
     public boolean obtenerMuerte(){
         return muere;
     }
-
 
     public void verEventos(int dificultad){
             listaEventos = new ListaJuegos();
@@ -128,7 +125,7 @@ public class MenuEventos{
             }
         }
         decidioJugar = false;
-        System.out.println("El código es inválido.");
+        System.out.println("El codigo es invalido.");
         return false;
     }
 }
