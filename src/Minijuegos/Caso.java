@@ -19,29 +19,30 @@ public class Caso{
      */
     private double dineroObtenido;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo hambre de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo hambre de la mascota
+     */
     private double puntosHambre;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo felicidad de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo felicidad de la mascota
+     */
     private double puntosFelicidad;
     /**
-	* Valor de los puntos que se pierde/gana en el atributo energía de la mascota
-	*/
+     * Valor de los puntos que se pierde/gana en el atributo energía de la mascota
+     */
     private double puntosEnergia;
     /**
-     * booleano que define por defecto que la mascota no muere
+     * Booleano que define por defecto que la mascota no muere
      */
     private boolean muere = false;
 
     /**
-     * Método constructor de un caso
-     * @param texto resultado del caso
-     * @param dineroObtenido dinero ganado en el caso
-     * @param puntosHambre puntos de hambre a modificar en la mascota
-     * @param puntosEnergia puntos de energia a modificar en la mascota
-     * @param puntosFelicidad puntos de felicidad a modificar en la mascota
+     * Constructor por parámetros de un caso
+     *
+     * @param texto Resultado del caso
+     * @param dineroObtenido La cantidad de dinero ganado en el caso
+     * @param puntosHambre Los puntos de hambre a modificar en la mascota
+     * @param puntosEnergia Los puntos de energia a modificar en la mascota
+     * @param puntosFelicidad Los puntos de felicidad a modificar en la mascota
      */
     public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad){
         this.texto = texto;
@@ -52,13 +53,14 @@ public class Caso{
     }
 
     /**
-     * Método constructor de un caso donde la mascota muere.
-     * @param texto resultado del caso
-     * @param dineroObtenido dinero ganado en el caso
-     * @param puntosHambre puntos de hambre a modificar en la mascota
-     * @param puntosEnergia puntos de energia a modificar en la mascota
-     * @param puntosFelicidad puntos de felicidad a modificar en la mascota
-     * @param muere si la mascota muere
+     * Constrcutor por parámetros de un caso donde la mascota muere. 
+     *
+     * @param texto Resultado del caso
+     * @param dineroObtenido La cantidad de dinero ganado en el caso
+     * @param puntosHambre Los puntos de hambre a modificar en la mascota
+     * @param puntosEnergia Los puntos de energia a modificar en la mascota
+     * @param puntosFelicidad Los puntos de felicidad a modificar en la mascota
+     * @param muere Valor booleano que determina si la mascota muere
      */
     public Caso(String texto, double dineroObtenido, double puntosHambre, double puntosEnergia, double puntosFelicidad, boolean muere){
         this.texto = texto;
@@ -78,7 +80,7 @@ public class Caso{
     }
 
     /**
-     * método que asigna el dinero obtenido de un caso.
+     * Método que asigna el dinero obtenido de un caso.
      * @param dineroObtenido
      */
     public void asignarDineroObtenido(double dineroObtenido){
@@ -135,7 +137,7 @@ public class Caso{
 
     /**
      * Método que devuelve un string con el texto del resultado.
-     * @return
+     * @return texto
      */
     public String textoResultado(){
         return texto;
