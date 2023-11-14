@@ -153,9 +153,9 @@ public class ListaJuegos implements Catalogo{
         "\nA tu mascota le ha tocado enfrentarse a... ¡¿un gallo de pelea!?\n" +
         "¡Tras unos picotazos y cacareos del gallo, tu mascota contrataca con\n" + "un mordizco aturdidor a la cabeza!\n" +
         "¡Tu mascota remata con tremendo FALCON PUNCH!!\n" +
-        "\n ¡Has ganado! Obtienes 100 pejecoins como recompensa.\n" +
+        "\n ¡Has ganado! Obtienes 70 pejecoins como recompensa.\n" +
         "Tuviste suerte con tu oponente...";
-        c8.agregarCaso(resultado, 70, -15, -15, 16, 1);
+        c8.agregarCaso(resultado, 40, -15, -15, 16, 1);
         resultado = "       ¡QUE COMIENCE EL COMBATE!\n" +
         "\nA tu mascota le ha tocado enfrentarse a... un macaco con Kaio-ken x50 modo javero despertado al 100%\n" +
         "¡Las mascotas comienzan a lanzar golpes aca bien maquiavelicos como el Kokun Z!\n" + 
@@ -182,10 +182,11 @@ public class ListaJuegos implements Catalogo{
         "\nChungus ataca con un ataque pesado, pero tu mascota logra esquivarlo!\n" +
         "Tu mascota hace una embestida al estilo indio e impacta!\n" +
         "Chungus comenzo a rodar sin sentido y se ha alejado!\n" +
-        "¡Chungus cambia de arma, y lanza el hechizo 'aullido aturdidor'! ¡Esto deja paralizada a tu mascota!\n" +
-        "¡¡¡Chungus hace un golpe crítico por la espalda a tu mascota, y termina cayendo!!!\n" +
-        "\nHas perdido, tu mascota está malherida...";
-        c8.agregarCaso(resultado, -30, -30, -17, -16, 1);
+        "¡Tu mascota cambia de arma, y lanza el hechizo 'aullido aturdidor'! ¡Esto deja paralizado a Cungus!\n" +
+        "¡¡¡Tu mascota hace un golpe crítico por la espalda a Chungus, y termina cayendo!!!\n" +
+        "\n ¡Has ganado! Obtienes 90 pejecoins como recompensa.\n" +
+        "Pero deberías hacer otras actividades menos peligrosas con tu mascota...";
+        c8.agregarCaso(resultado, 60, -25, -17, -16, 1);
         agregarEvento((Object) c8);
     }
 
