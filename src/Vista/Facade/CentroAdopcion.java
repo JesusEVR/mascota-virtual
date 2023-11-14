@@ -221,9 +221,9 @@ public class CentroAdopcion{
 		
 		}else if(!hogar.estaVivo()){ 
 			System.out.println(" ");
-			System.out.println("					¡Tu mascota fallecio!");
+			System.out.println("				    ¡Tu mascota fallecio!");
 			System.out.println("			¿Como sucedio esto? Tenias un solo deber >:/");
-			System.out.println("		       Tu mascota sobrevivio " +hogar.diasVivo()+" dias" );
+			System.out.println("		                Tu mascota sobrevivio " +hogar.diasVivo()+" dias" );
 		}
 	
 		
