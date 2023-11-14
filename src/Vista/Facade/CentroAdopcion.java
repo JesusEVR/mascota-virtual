@@ -109,7 +109,7 @@ public class CentroAdopcion{
 		if(continuar){
 			
 		System.out.println(" ");
-		System.out.println("----------------- A D O P C I O N ------------------------"); 
+		System.out.println("----------------- A D O P C I O N ------------------------\n"); 
 		boolean mascotaExiste = false;
 		CrearMascota creacion = new CrearMascota();
 		creacion.verMascotas();
@@ -202,10 +202,6 @@ public class CentroAdopcion{
 						seguir = true;
 						break;
 				}
-
-				/*if(!hogar.estaVivo()){
-					seguir = false;
-				}*/
 			
 			}while(seguir);
 		}
@@ -227,6 +223,7 @@ public class CentroAdopcion{
 			System.out.println(" ");
 			System.out.println("					¡Tu mascota fallecio!");
 			System.out.println("			¿Como sucedio esto? Tenias un solo deber >:/");
+			System.out.println("		       Tu mascota sobrevivio " +hogar.diasVivo()+" dias" );
 		}
 	
 		
