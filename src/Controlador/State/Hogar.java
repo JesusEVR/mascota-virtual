@@ -84,7 +84,7 @@ public class Hogar{
 	/**
 	 * Contador de los días que la mascota ha estado viva.
 	 */
-	private int diasVivo = 1;
+	private int diasVivo = 0;
 
 	/**
 	 * Constructor por parámetros.
