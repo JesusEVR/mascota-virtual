@@ -43,16 +43,16 @@ public class ListaJuegos implements Catalogo{
         // Evento 3
         texto = "InsanoMaster300 con su mascota esta ofreciendo 25 pejecoins a quien logre ganarles un match 2v2 en \n" + "Super Smash Bros (ojo que son main Steve y Kazuya). El costo por intentar es 10 pejecoins.";
         ConstructorEventos c3 = new ConstructorEventos("3", "Retas Smash", texto, 2, 2, 14);
-        resultado = "¡Gracias a tus habilidades lograste ganar el match! Obtienes 25 pejecoins.";
+        resultado = "¡Gracias a tus habilidades, hiciste tremendo combo y lograron ganar el match! Obtienes 25 pejecoins.";
         c3.agregarCaso(resultado, 15, -10, -13, 15, 6);
         resultado = "No lograron ganar, su Steve era demasiado fuerte...";
         c3.agregarCaso(resultado, -10, -10, -15, -8, 8);
         agregarEvento((Object) c3);
 
         // Evento 4
-        texto = "El viejo brujo que vive afuera del Oxxo reta a la gente a tirar en su ruleta magica! (Es para \n" + "un TikTok dice :v)";
+        texto = "El mago brujo que vive afuera del Oxxo reta a la gente a tirar en su ruleta magica! (Es para \n" + "un TikTok dice :v)";
         ConstructorEventos c4 = new ConstructorEventos("4", "Ruleta Mágica", texto, 2, 6, 6);
-        resultado = "Deposito magico: Se agregaron magicamente 15 pejecoins a tu monedero electronico!";
+        resultado = "¡Deposito magico: Se agregaron magicamente 15 pejecoins a tu monedero electronico!";
         c4.agregarCaso(resultado, 15, -8, -10, 15, 1);
         resultado = "¡Poción magica: +15 pts a cada estadística de tu mascota!";
         c4.agregarCaso(resultado, 0, 15, 15, 15, 1);
@@ -62,7 +62,7 @@ public class ListaJuegos implements Catalogo{
         resultado = "/tp @s -48120 301 15644: Fueron teletansportados a un bosque en medio de la carretera!\n" + 
         "El viaje de regreso fue largo y cansado.";
         c4.agregarCaso(resultado, 0, -20, -18, -12, 1);
-        resultado = "¡Doxxeo magico: Salio re troll el viejo asqueroso, obtuvo tu informacion y te cambio a Movistar!\n" +
+        resultado = "¡Doxxeo magico: Salio re troll el mago brujo, obtuvo tu informacion y te cambio a Movistar!\n" +
         "El spam de mensajes y llamadas es agobiante (ayudenme no me puedo cambiar).";
         c4.agregarCaso(resultado, 0, -10, -16, -13, 1);
         resultado = "¡Deposito magico: Se agregaron magicamente 15 pejecoins a tu monedero electronico!\n" +
@@ -112,10 +112,10 @@ public class ListaJuegos implements Catalogo{
         resultado = "Comienza el juego...\n" +
         "6...\n" +
         "5...\n" +
-        "4... *BANG!\n" +
-        "\nSe reparte el dinero entre los ganadores, te han tocado 70 pejecoins.\n" +
+        "4... *BANG!!\n" +
+        "\nSe reparte el dinero entre los ganadores, te han tocado 56 pejecoins.\n" +
         "No deberías hacer esto de nuevo, a tu mascota casi le da un infarto...";
-        c7.agregarCaso(resultado, 70.0, -15.0, -15.0, -30.0, 2);
+        c7.agregarCaso(resultado, 56.0, -15.0, -15.0, -30.0, 2);
         
         resultado = "Comienza el juego...\n" +
         "6...\n" +
@@ -123,16 +123,16 @@ public class ListaJuegos implements Catalogo{
         "4...\n" +
         "3...\n" +
         "2... *BANG!!\n" +
-        "\nSe reparte el dinero entre los ganadores, esta vez te ha tocado 100 pejecoins...\n" +
+        "\nSe reparte el dinero entre los ganadores, esta vez te ha tocado 64 pejecoins...\n" +
         "¿De verdad valió la pena?";
-        c7.agregarCaso(resultado, 100.0, -15.0, -15.0, -30.0, 1);
+        c7.agregarCaso(resultado, 64.0, -15.0, -15.0, -30.0, 1);
         
         resultado = "Comienza el juego...\n" +
         "6...\n" +
         "5... *BANG!!\n" +
-        "\nSe reparte el dinero entre los ganadores, has obtenido 65 pejecoins...\n" +
+        "\nSe reparte el dinero entre los ganadores, has obtenido 60 pejecoins...\n" +
         "Seguro que puedes conseguir dinero de otra forma.";
-        c7.agregarCaso(resultado, 65.0, -15.0, -15.0, -30.0, 2);
+        c7.agregarCaso(resultado, 60.0, -15.0, -15.0, -30.0, 2);
         
         resultado = "Comienza el juego...\n" +
         "6...\n" +
@@ -140,7 +140,7 @@ public class ListaJuegos implements Catalogo{
         "4...\n" +
         "3... *BANG!!\n" +
         "\nSe reparte el dinero entre los ganadores...\n" + 
-        "Pero tú no eres uno de ellos. Moriste y tu mascota fue atropellada segundos despues.";
+        "Pero tú no eres uno de ellos.";
         c7.asignarMuerte(true);
         c7.agregarCaso(resultado, 0.0, 0.0, 0.0, 0.0, 2);
         agregarEvento((Object) c7);
@@ -178,12 +178,12 @@ public class ListaJuegos implements Catalogo{
         c8.asignarMuerte(false);
         c8.agregarCaso(resultado, -30, -26, -19, -15, 1);
         resultado = "       ¡QUE COMIENCE EL COMBATE!\n" +
-        "\nTu mascota le ha tocado enfrentarse a... El mismísimo Big ChungusFloppa lvl 200 con build de fuerza y destreza!\n" +
-        "\nFloppa ataca con un ataque pesado, pero tu mascota logra esquivarlo!\n" +
+        "\nTu mascota le ha tocado enfrentarse a... El mismísimo Big Chungus lvl 200 con build de fuerza y destreza!\n" +
+        "\nChungus ataca con un ataque pesado, pero tu mascota logra esquivarlo!\n" +
         "Tu mascota hace una embestida al estilo indio e impacta!\n" +
-        "Floppa comenzo a rodar sin sentido y se ha alejado!\n" +
-        "¡Floppa cambia de arma, y lanza el hechizo 'aullido aturdidor'! ¡Esto deja paralizada a tu mascota!\n" +
-        "¡¡¡Floppa hace un golpe crítico por la espalda a tu mascota, y termina cayendo!!!\n" +
+        "Chungus comenzo a rodar sin sentido y se ha alejado!\n" +
+        "¡Chungus cambia de arma, y lanza el hechizo 'aullido aturdidor'! ¡Esto deja paralizada a tu mascota!\n" +
+        "¡¡¡Chungus hace un golpe crítico por la espalda a tu mascota, y termina cayendo!!!\n" +
         "\nHas perdido, tu mascota está malherida...";
         c8.agregarCaso(resultado, -30, -30, -17, -16, 1);
         agregarEvento((Object) c8);
