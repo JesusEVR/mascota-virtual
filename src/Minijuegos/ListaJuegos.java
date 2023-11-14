@@ -153,9 +153,9 @@ public class ListaJuegos implements Catalogo{
         "\nA tu mascota le ha tocado enfrentarse a... ¡¿un gallo de pelea!?\n" +
         "¡Tras unos picotazos y cacareos del gallo, tu mascota contrataca con\n" + "un mordizco aturdidor a la cabeza!\n" +
         "¡Tu mascota remata con tremendo FALCON PUNCH!!\n" +
-        "\n ¡Has ganado! Obtienes 70 pejecoins como recompensa.\n" +
+        "\n ¡Has ganado! Obtienes 100 pejecoins como recompensa.\n" +
         "Tuviste suerte con tu oponente...";
-        c8.agregarCaso(resultado, 40, -15, -15, 16, 1);
+        c8.agregarCaso(resultado, 70, -15, -15, 16, 1);
         resultado = "       ¡QUE COMIENCE EL COMBATE!\n" +
         "\nA tu mascota le ha tocado enfrentarse a... un macaco con Kaio-ken x50 modo javero despertado al 100%\n" +
         "¡Las mascotas comienzan a lanzar golpes aca bien maquiavelicos como el Kokun Z!\n" + 
